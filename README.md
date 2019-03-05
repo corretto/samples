@@ -1,6 +1,9 @@
 ## Corretto Samples
 
-Corretto Samples
+This is a repo where we will collect samples for performance improvements and new capabilities as they show up in Corretto.
+
+## Available samples
+`jmh-benchmarks` -> Benchmarks on different java functions optimized by Corretto.
 
 ## License Summary
 
