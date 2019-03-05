@@ -1,0 +1,5 @@
+rootProject.name = 'jmh-samples'
+
+include ':GetSimpleName',
+        ':GetThreadInfo',
+        ':ACCP'
