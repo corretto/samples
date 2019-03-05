@@ -1,0 +1,31 @@
+plugins {
+    id "me.champeau.gradle.jmh" version "0.4.8"
+}
+
+jmh {
+    // See https://github.com/melix/jmh-gradle-plugin for more configuration options
+    failOnError = true
+    warmupIterations = 10
+
+    iterations = 20
+    fork = 1
+    timeOnIteration = '500ms'
+    warmup = '500ms'
+
+    // Time units options: [m, s, ms, us, ns]
+    timeUnit = 'ns'
+    // Benchmark mode. Available modes are: [Throughput/thrpt, AverageTime/avgt, SampleTime/sample, SingleShotTime/ss, All/all]
+    benchmarkMode = ['avgt']
+
+    // Benchmark parameters: Seperated by '&' for parameter types, and ',' for multiple values
+    if (project.hasProperty('benchmarkParameters')) {
+        benchmarkParameters = data.split('&').inject([:]) { map, token ->
+            token.split('=').with { map[it[0]] = it[1] }
+        }
+    }
+
+    resultFormat = 'json'
+    resultsFile = file("${buildDir}/reports/jmh/results.json")
+}
+
+jmhJar.baseName = 'custom'
