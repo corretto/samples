@@ -23,8 +23,31 @@ import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * The java.lang.management.ThreadMXBean.getThreadInfo() method can be used to obtain the thread
+ * stack trace and synchronization information including on which lock a thread is blocked or
+ * waiting and which locks the thread currently owns. The performance of this method is critical
+ * for efficient, unintrusive profiling.
+ * <p>
+ * The original implementation of java.lang.management.ThreadMXBean.getThreadInfo() iterates
+ * over the array of thread IDs and does a linear search over the thread list for each iterated
+ * ID, so finding the target Java thread becomes a time-consuming process for massively parallel
+ * applications. By replacing the original linear search over thread list with searching thread
+ * hash table, ThreadMXBean.getThreadInfo() performs better in runtime overhead, especially for
+ * application running with large thread pools. The optimization also benefits other ThreadMXBean
+ * methods such as ThreadMXBean.getThreadCpuTime() and ThreadMXBean.getThreadUserTime().
+ * <p>
+ * In the circumstances of 1000 and 5000 active user threads, this benchmark demonstrates the
+ * average operation time of ThreadMXBean.getThreadInfo() on returning thread info of single
+ * thread and all threads. Also the operation time of ThreadMXBean.getThreadCpuTime() and
+ * ThreadMXBean.getThreadUserTime() methods on single thread.
+ *
+ * @version 1.0
+ * @since 2019-07-03
+ */
 @State(Scope.Group)
 public class GetThreadInfoBenchmark {
+
     private static boolean live = true;
     private int index;
     private long[] tid_array;

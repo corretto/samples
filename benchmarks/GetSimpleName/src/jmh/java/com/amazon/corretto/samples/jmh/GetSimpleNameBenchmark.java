@@ -14,6 +14,18 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+/**
+ * Class.getSimpleName() and Class.getCanonicalName() are heavily used in logging frameworks and dependency
+ * injection code. Reflection is used within these methods to produce results. But because the result is not
+ * cached, each method call has large overhead cost. While it is possible to cache the result in user code,
+ * a more general solution used by Corretto is to cache it in the implementation of the method itself.
+ * <p>
+ * This benchmark demonstrates the average operation time of Class.getSimpleName() and Class.getCanonicalName()
+ * methods.
+ *
+ * @version 1.0
+ * @since 2019-07-03
+ */
 @State(Scope.Group)
 public class GetSimpleNameBenchmark {
 
