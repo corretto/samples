@@ -9,9 +9,8 @@ public class ACCPSecureRandomBenchmark {
     @Benchmark
     @Group("ACCPSecureRandom")
     public byte[] testAccpSecureRandom(SecureRandomState state) {
-        byte[] data = new byte[16000];
-        state.secureRandom.nextBytes(data);
-        return data;
+        state.secureRandom.nextBytes(state.data);
+        return state.data;
     }
 
     @Benchmark
