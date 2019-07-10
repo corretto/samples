@@ -4,8 +4,11 @@ The project contains demo class demonstrating the performance gains in using the
 [Amazon Corretto Crypto Provider](https://github.com/corretto/amazon-corretto-crypto-provider). Amazon Corretto Crypto
 Provider is a collection of high-performance cryptographic implementations exposed via standard JCA/JCE interface. 
 
-This demo uses as example of generating 16000 bytes of random data using SecureRandom. The same program can be run using
-ACCP enabled or disabled. 
+The project contains 2 demos 
+
+1. SecureRandom : This demo uses as example of generating 16000 bytes of random data using SecureRandom. The same 
+program can be run using ACCP enabled or disabled.
+1. Cipher : This demonstrates encryption of 16000 bytes of data. It can be run with both ACCP Enabled or Disabled.  
 
 ## Running the demo
 
@@ -15,28 +18,48 @@ The demo can be run in both a native linux machine or in a docker image.
 
 To run with ACCP disabled
 ```
-$ ./gradlew runDefault
+# To run SecureRandom
+$ ./gradlew runRandomDefault
+
+# To run Cipher
+$ ./gradlew runCipher Default
 ```
 
 To run with ACCP enabled 
 ```
-$ ./gradlew runAccp
+# To run SecureRandom
+$ ./gradlew runRandomAccp
+
+# To run Cipher
+$ ./gradlew runCipherAccp
 ```
 
 ### Running with docker
 
-To run with ACCP disabled 
+#### Prepare the docker image
 
 ```
 $ docker build . -t accp-demo
 
-$ docker run -it accp-demo runDefault
+```
+#### Running Demo
+
+To run with ACCP disabled 
+
+```
+# To run SecureRandom
+$ docker run -it accp-demo runRandomDefault
+
+# To run Cipher
+$ docker run -it accp-demo runCipherDefault
 ```
 
 To run with ACCP enabled
 
 ```
-$ docker build . -t accp-demo
+# To run SecureRandom
+$ docker run -it accp-demo runRandomAccp
 
-$ docker run -it accp-demo runAccp
+# To run Cipher
+$ docker run -it accp-demo runCipherAccp
 ```

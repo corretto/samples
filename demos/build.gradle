@@ -14,14 +14,26 @@ repositories {
     }
 }
 
-task(runDefault, dependsOn: 'build', type: JavaExec) {
+task(runRandomDefault, dependsOn: 'build', type: JavaExec) {
     main = 'com.amazon.corretto.demo.SecureRandomDemo'
     classpath = sourceSets.main.runtimeClasspath
     args 'default'
 }
 
-task(runAccp, dependsOn: 'build', type: JavaExec) {
+task(runRandomAccp, dependsOn: 'build', type: JavaExec) {
     main = 'com.amazon.corretto.demo.SecureRandomDemo'
+    classpath = sourceSets.main.runtimeClasspath
+    args 'ACCP'
+}
+
+task(runCipherDefault, dependsOn: 'build', type: JavaExec) {
+    main = 'com.amazon.corretto.demo.CipherDemo'
+    classpath = sourceSets.main.runtimeClasspath
+    args 'default'
+}
+
+task(runCipherAccp, dependsOn: 'build', type: JavaExec) {
+    main = 'com.amazon.corretto.demo.CipherDemo'
     classpath = sourceSets.main.runtimeClasspath
     args 'ACCP'
 }
