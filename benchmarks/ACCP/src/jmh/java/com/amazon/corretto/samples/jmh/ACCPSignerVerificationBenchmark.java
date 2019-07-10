@@ -12,12 +12,14 @@ public class ACCPSignerVerificationBenchmark {
     @Benchmark
     @Group("AccpSHA512WithRSABenchmark")
     public boolean testAccpBenchmark(VerificationSignerState verificationState) throws InvalidKeyException, SignatureException {
+        verificationState.signature.update(verificationState.message);
         return verificationState.signature.verify(verificationState.sig);
     }
 
     @Benchmark
     @Group("SHA512WithRSABenchmark")
     public boolean testDefaultBenchmark(VerificationSignerState verificationState) throws InvalidKeyException, SignatureException {
+        verificationState.defaultSignature.update(verificationState.message);
         return verificationState.defaultSignature.verify(verificationState.sig);
     }
 }
