@@ -13,7 +13,7 @@ import java.util.UUID;
 
 
 @State(Scope.Thread)
-public class SHA256StateClass {
+public class MessageDigestStateClass {
     public MessageDigest digest;
     public MessageDigest defaultDigest;
     public byte[] text;
@@ -23,12 +23,9 @@ public class SHA256StateClass {
         defaultDigest = MessageDigest.getInstance("SHA-512", "SUN");
         digest = MessageDigest.getInstance("SHA-512");
 
-    }
-
-    @Setup(Level.Iteration)
-    public void setupText() {
         SecureRandom secureRandom = new SecureRandom();
         text = new byte[160000];
         secureRandom.nextBytes(text);
     }
+
 }
