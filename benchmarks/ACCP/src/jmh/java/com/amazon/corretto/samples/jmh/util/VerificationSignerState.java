@@ -32,7 +32,8 @@ public class VerificationSignerState {
     public byte[] sig;
 
     @Setup(Level.Trial)
-    public void doSetup() throws NoSuchProviderException, NoSuchAlgorithmException {
+    public void doSetup() throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeyException,
+            SignatureException {
         AmazonCorrettoCryptoProvider.install();
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
@@ -44,12 +45,6 @@ public class VerificationSignerState {
 
         this.keyPair = keyPairGenerator.generateKeyPair();
 
-
-    }
-
-
-    @Setup(Level.Iteration)
-    public void setupMessage() throws InvalidKeyException, SignatureException {
         SecureRandom secureRandom = new SecureRandom();
 
         this.message = new byte[1024];
@@ -64,5 +59,7 @@ public class VerificationSignerState {
         defaultSignature.initVerify(keyPair.getPublic());
 
         signature.initVerify(keyPair.getPublic());
+
+
     }
 }
