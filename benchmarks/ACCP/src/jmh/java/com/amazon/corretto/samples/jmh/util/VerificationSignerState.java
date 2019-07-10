@@ -11,6 +11,7 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
 import java.security.Signature;
 import java.security.SignatureException;
 import java.util.UUID;
@@ -26,7 +27,7 @@ public class VerificationSignerState {
 
     private Signature creator;
 
-    public String message;
+    public byte[] message;
 
     public byte[] sig;
 
@@ -34,11 +35,12 @@ public class VerificationSignerState {
     public void doSetup() throws NoSuchProviderException, NoSuchAlgorithmException {
         AmazonCorrettoCryptoProvider.install();
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        keyPairGenerator.initialize(2048);
+
         defaultSignature = Signature.getInstance("SHA512WithRSA", "SunRsaSign");
 
         signature = Signature.getInstance("SHA512WithRSA");
         creator = Signature.getInstance("SHA512WithRSA");
-
 
         this.keyPair = keyPairGenerator.generateKeyPair();
 
@@ -48,20 +50,19 @@ public class VerificationSignerState {
 
     @Setup(Level.Iteration)
     public void setupMessage() throws InvalidKeyException, SignatureException {
-        this.message = UUID.randomUUID().toString();
+        SecureRandom secureRandom = new SecureRandom();
 
+        this.message = new byte[1024];
+        secureRandom.nextBytes(this.message);
 
-
+        //Using a different signature object inorder to prevent interference.
         creator.initSign(keyPair.getPrivate());
-        creator.update(message.getBytes());
+        creator.update(message);
 
         sig = creator.sign();
 
         defaultSignature.initVerify(keyPair.getPublic());
-        defaultSignature.update(message.getBytes());
 
         signature.initVerify(keyPair.getPublic());
-        signature.update(message.getBytes());
-
     }
 }

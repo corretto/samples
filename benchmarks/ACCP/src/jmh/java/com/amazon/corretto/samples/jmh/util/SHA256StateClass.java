@@ -8,6 +8,7 @@ import org.openjdk.jmh.annotations.State;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
 import java.util.UUID;
 
 
@@ -19,12 +20,15 @@ public class SHA256StateClass {
 
     @Setup(Level.Trial)
     public void doSetup() throws NoSuchAlgorithmException, NoSuchProviderException {
-        defaultDigest = MessageDigest.getInstance("SHA-256", "SUN");
-        digest = MessageDigest.getInstance("SHA-256");
+        defaultDigest = MessageDigest.getInstance("SHA-512", "SUN");
+        digest = MessageDigest.getInstance("SHA-512");
+
     }
 
     @Setup(Level.Iteration)
     public void setupText() {
-        text = UUID.randomUUID().toString().getBytes();
+        SecureRandom secureRandom = new SecureRandom();
+        text = new byte[160000];
+        secureRandom.nextBytes(text);
     }
 }

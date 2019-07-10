@@ -16,12 +16,14 @@ public class ACCPSignerEncryptionBenchmark {
     @Benchmark
     @Group("AccpSHA512WithRSABenchmark")
     public byte[] testAccpBenchmark(EncryptionSignerState signerState) throws InvalidKeyException, SignatureException {
+        signerState.signature.update(signerState.message);
         return signerState.signature.sign();
     }
 
     @Benchmark
     @Group("SHA512WithRSABenchmark")
     public byte[] testDefaultBenchmark(EncryptionSignerState signerState) throws InvalidKeyException, SignatureException {
+        signerState.defaultSignature.update(signerState.message);
         return signerState.defaultSignature.sign();
     }
 }
