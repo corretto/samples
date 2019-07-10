@@ -21,8 +21,6 @@ public class SecureRandomState {
 
         AmazonCorrettoCryptoProvider.install();
         secureRandom = new SecureRandom();
-        System.out.println(defaultSecureRandom.getProvider().getName());
-        System.out.println(secureRandom.getProvider().getName());
 
         data = new byte[16000];
 

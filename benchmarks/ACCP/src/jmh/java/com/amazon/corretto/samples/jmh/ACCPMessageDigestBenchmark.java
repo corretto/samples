@@ -11,15 +11,15 @@ import java.security.NoSuchAlgorithmException;
 public class ACCPMessageDigestBenchmark {
 
 
-    @Group("AccpSHA256Digest")
+    @Group("AccpSHA512Digest")
     @Benchmark
-    public byte[] testAccpSHA256Digest(MessageDigestStateClass stateClass) throws NoSuchAlgorithmException {
+    public byte[] testAccpSHA512Digest(MessageDigestStateClass stateClass) throws NoSuchAlgorithmException {
         return stateClass.digest.digest(stateClass.text);
     }
 
-    @Group("SHA256Digest")
+    @Group("SHA512Digest")
     @Benchmark
-    public byte[] testSHA256Digest(MessageDigestStateClass stateClass) throws NoSuchAlgorithmException {
+    public byte[] testSHA512Digest(MessageDigestStateClass stateClass) throws NoSuchAlgorithmException {
         return stateClass.defaultDigest.digest(stateClass.text);
     }
 }

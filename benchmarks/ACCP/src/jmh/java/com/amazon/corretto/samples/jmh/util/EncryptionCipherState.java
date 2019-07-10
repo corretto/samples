@@ -24,6 +24,8 @@ public class EncryptionCipherState {
     public byte[] message;
 
     private SecureRandom secureRandom;
+    private SecretKeySpec secretKeySpec;
+
 
 
     @Setup(Level.Trial)
@@ -34,19 +36,20 @@ public class EncryptionCipherState {
         defaultCipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
         secureRandom = new SecureRandom();
 
+        byte[] key = new byte[16];
+        secureRandom.nextBytes(key);
+        secretKeySpec = new SecretKeySpec(key, "AES");
+
     }
 
     @Setup(Level.Invocation)
     public void setupMessage() throws InvalidAlgorithmParameterException, InvalidKeyException {
+        byte[] iv = new byte[12];
+        secureRandom.nextBytes(iv);
+
         message = new byte[1024];
         secureRandom.nextBytes(message);
 
-        byte[] key = new byte[16];
-        secureRandom.nextBytes(key);
-
-        SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
-        byte[] iv = new byte[12];
-        secureRandom.nextBytes(iv);
 
         GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
 
