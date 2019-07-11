@@ -20,7 +20,9 @@ import java.security.SignatureException;
 public class ACCPSignerVerificationBenchmark {
 
     /**
-     * VerificationSignerState class instantiates the Signature object for default and amazon corretto crypto provider.
+     * VerificationSignerState class instantiates the Signature object for default crypto provider and Amazon Corretto
+     * Crypto Provider.
+     *
      * It also creates a signed message that is used by signature.verify to benchmark.
      */
     @State(Scope.Thread)
@@ -32,7 +34,6 @@ public class ACCPSignerVerificationBenchmark {
         Signature creator;
         byte[] message;
         byte[] sig;
-
 
         @Setup(Level.Trial)
         public void doSetup() throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeyException,
@@ -62,8 +63,6 @@ public class ACCPSignerVerificationBenchmark {
             defaultSignature.initVerify(keyPair.getPublic());
 
             signature.initVerify(keyPair.getPublic());
-
-
         }
     }
 

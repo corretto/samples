@@ -21,7 +21,8 @@ import java.security.SignatureException;
 public class ACCPSignerEncryptionBenchmark {
 
     /**
-     * EncryptionSignerState class instantiates the Signature object for default and amazon corretto crypto provider.
+     * EncryptionSignerState class instantiates the Signature object for default crypto provider and Amazon Corretto
+     * Crypto Provider.
      */
     @State(Scope.Thread)
     public static class EncryptionSignerState {
@@ -50,9 +51,7 @@ public class ACCPSignerEncryptionBenchmark {
             defaultSignature.initSign(keyPair.getPrivate());
 
             signature.initSign(keyPair.getPrivate());
-
         }
-
     }
 
     @Benchmark

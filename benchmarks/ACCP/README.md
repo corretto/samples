@@ -5,7 +5,7 @@ This benchmark compares the performance of [Amazon Corretto Crypto Provider](htt
 1. Make sure [Corretto 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html) is installed
  and set as `JAVA_HOME`.
 
-2. To execute the benchmarks from the current folder `./samples/benchmarks/ACCP` run: 
+2. To execute the benchmark from the current folder `./samples/benchmarks/ACCP` run: 
  * Linux
    ```
    ../gradlew jmh

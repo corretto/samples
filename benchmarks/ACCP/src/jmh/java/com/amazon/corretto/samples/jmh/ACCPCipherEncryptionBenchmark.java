@@ -23,10 +23,10 @@ import java.security.SecureRandom;
 public class ACCPCipherEncryptionBenchmark {
 
     /**
-     * EncryptionCipherState creates and initializes the encryption cipher for default and amazon corretto crypto
-     * providers. The cipher are initialized for 'AES/GCM/NoPadding'.
+     * EncryptionCipherState creates and initializes the encryption cipher for default crypto provider and Amazon
+     * Corretto Crypto Provider. The cipher is initialized for 'AES/GCM/NoPadding'.
      *
-     * The class also generates new initialization vector and message for encryption for each iteration.
+     * The class also generates new initialization vector and message for each iteration.
      */
     @State(Scope.Thread)
     public static class EncryptionCipherState {
@@ -37,8 +37,6 @@ public class ACCPCipherEncryptionBenchmark {
 
         SecureRandom secureRandom;
         SecretKeySpec secretKeySpec;
-
-
 
         @Setup(Level.Trial)
         public void doSetup() throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException {
@@ -61,7 +59,6 @@ public class ACCPCipherEncryptionBenchmark {
 
             message = new byte[1024];
             secureRandom.nextBytes(message);
-
 
             GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
 
