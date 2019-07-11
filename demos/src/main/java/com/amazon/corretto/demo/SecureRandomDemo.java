@@ -7,13 +7,13 @@ import java.security.SecureRandom;
 public class SecureRandomDemo {
 
     public static void main(String[] args) {
-        if (args.length == 1 && args[0].equals("ACCP")) {
-            AmazonCorrettoCryptoProvider.install();
-        }
+        //Amazon Corretto Crypto Provider can also be enabled by uncommenting the line below.
+        //AmazonCorrettoCryptoProvider.install();
 
         SecureRandom secureRandom = new SecureRandom();
         byte[] data = new byte[16000];
 
+        //Time the generation of 16000 bytes of random data.
         long starttime = System.nanoTime();
         secureRandom.nextBytes(data);
         long endtime = System.nanoTime();

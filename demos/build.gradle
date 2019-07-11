@@ -17,25 +17,23 @@ repositories {
 task(runRandomDefault, dependsOn: 'build', type: JavaExec) {
     main = 'com.amazon.corretto.demo.SecureRandomDemo'
     classpath = sourceSets.main.runtimeClasspath
-    args 'default'
 }
 
 task(runRandomAccp, dependsOn: 'build', type: JavaExec) {
     main = 'com.amazon.corretto.demo.SecureRandomDemo'
     classpath = sourceSets.main.runtimeClasspath
-    args 'ACCP'
+    jvmArgs '-Djava.security.properties=amazon-corretto-crypto-provider.security'
 }
 
 task(runCipherDefault, dependsOn: 'build', type: JavaExec) {
     main = 'com.amazon.corretto.demo.CipherDemo'
     classpath = sourceSets.main.runtimeClasspath
-    args 'default'
 }
 
 task(runCipherAccp, dependsOn: 'build', type: JavaExec) {
     main = 'com.amazon.corretto.demo.CipherDemo'
     classpath = sourceSets.main.runtimeClasspath
-    args 'ACCP'
+    jvmArgs '-Djava.security.properties=amazon-corretto-crypto-provider.security'
 }
 
 dependencies {
