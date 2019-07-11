@@ -21,50 +21,47 @@ import java.security.SignatureException;
 public class ACCPSignerEncryptionBenchmark {
 
     /**
-     * EncryptionSignerState class instantiates the Signature object for default crypto provider and Amazon Corretto
-     * Crypto Provider.
+     * EncryptionSignerState class instantiates the Signature object for the default crypto provider and the Amazon
+     * Corretto Crypto Provider.
      */
     @State(Scope.Thread)
     public static class EncryptionSignerState {
 
-        KeyPair keyPair;
-        Signature defaultSignature;
-        Signature signature;
+        Signature defaultSigner;
+        Signature accpSigner;
         byte[] message;
 
         @Setup(Level.Trial)
         public void doSetup() throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeyException {
             AmazonCorrettoCryptoProvider.install();
-            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+
+            final KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
             keyPairGenerator.initialize(2048);
+            final KeyPair keyPair = keyPairGenerator.generateKeyPair();
 
-            defaultSignature = Signature.getInstance("SHA512WithRSA", "SunRsaSign");
-            signature = Signature.getInstance("SHA512WithRSA");
-
-            this.keyPair = keyPairGenerator.generateKeyPair();
-
-            SecureRandom secureRandom = new SecureRandom();
+            final SecureRandom secureRandom = new SecureRandom();
             message = new byte[1024];
             secureRandom.nextBytes(message);
 
+            defaultSigner = Signature.getInstance("SHA512WithRSA", "SunRsaSign");
+            defaultSigner.initSign(keyPair.getPrivate());
 
-            defaultSignature.initSign(keyPair.getPrivate());
-
-            signature.initSign(keyPair.getPrivate());
+            accpSigner = Signature.getInstance("SHA512WithRSA", AmazonCorrettoCryptoProvider.PROVIDER_NAME);
+            accpSigner.initSign(keyPair.getPrivate());
         }
     }
 
     @Benchmark
     @Group("AccpSHA512WithRSABenchmark")
-    public byte[] testAccpBenchmark(EncryptionSignerState signerState) throws InvalidKeyException, SignatureException {
-        signerState.signature.update(signerState.message);
-        return signerState.signature.sign();
+    public byte[] testAccpBenchmark(EncryptionSignerState signerState) throws SignatureException {
+        signerState.accpSigner.update(signerState.message);
+        return signerState.accpSigner.sign();
     }
 
     @Benchmark
-    @Group("SHA512WithRSABenchmark")
-    public byte[] testDefaultBenchmark(EncryptionSignerState signerState) throws InvalidKeyException, SignatureException {
-        signerState.defaultSignature.update(signerState.message);
-        return signerState.defaultSignature.sign();
+    @Group("DefaultSHA512WithRSABenchmark")
+    public byte[] testDefaultBenchmark(EncryptionSignerState signerState) throws SignatureException {
+        signerState.defaultSigner.update(signerState.message);
+        return signerState.defaultSigner.sign();
     }
 }
