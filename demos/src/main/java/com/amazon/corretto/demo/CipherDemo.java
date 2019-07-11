@@ -38,7 +38,7 @@ public class CipherDemo {
             byte[] encrypted = cipher.doFinal(message);
             long endtime = System.nanoTime();
 
-            System.out.format("(%s) Time : %f ms", cipher.getProvider().getName(), (endtime - starttime) / 1000000.0);
+            System.out.format("(%s) Time : %f ms\n", cipher.getProvider().getName(), (endtime - starttime) / 1000000.0);
         } catch (Exception e) {
             e.printStackTrace();
         }

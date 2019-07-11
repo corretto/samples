@@ -18,6 +18,7 @@ public class SecureRandomDemo {
         secureRandom.nextBytes(data);
         long endtime = System.nanoTime();
 
-        System.out.format("(%s) Time : %f ms", secureRandom.getProvider().getName(), (endtime - starttime) / 1000000.0);
+        System.out.format("(%s) Time : %f ms\n",
+                secureRandom.getProvider().getName(), (endtime - starttime) / 1000000.0);
     }
 }
