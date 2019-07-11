@@ -13,7 +13,9 @@ import java.security.SecureRandom;
 public class ACCPSecureRandomBenchmark {
 
     /**
-     * SecureRandomState creates the secureRandom object for Default and Amazon Corretto Crypto Providers.
+     * SecureRandomState creates the SecureRandom object for default crypto provider and Amazon Corretto Crypto
+     * Provider.
+     *
      * It also initializes a buffer for random bytes.
      */
     @State(Scope.Thread)
@@ -31,8 +33,6 @@ public class ACCPSecureRandomBenchmark {
             secureRandom = new SecureRandom();
 
             data = new byte[16000];
-
-
         }
     }
 

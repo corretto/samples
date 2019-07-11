@@ -17,7 +17,9 @@ import java.security.SecureRandom;
 public class ACCPMessageDigestBenchmark {
 
     /**
-     * MessageDigestState creates the MessageDigest instance for both default and amazon corretto crypto providers.
+     * MessageDigestState creates the MessageDigest instance for default crypto provider and Amazon Corretto Crypto
+     * Provider.
+     *
      * It also generates random data to digest.
      */
     @State(Scope.Thread)
@@ -35,7 +37,6 @@ public class ACCPMessageDigestBenchmark {
             text = new byte[160000];
             secureRandom.nextBytes(text);
         }
-
     }
 
     @Group("AccpSHA512Digest")
