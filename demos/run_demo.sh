@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Wrapper to run the jar file.
 if [ $# -ne 2 ]; then
     echo "Usage: ./run_demo.sh <mode> <provider>"
     exit 1

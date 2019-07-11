@@ -1,15 +1,17 @@
 package com.amazon.corretto.demo;
 
-import com.amazon.corretto.crypto.provider.AmazonCorrettoCryptoProvider;
-
 import java.security.SecureRandom;
 
+/**
+ * SecureRandomDemo generates 16000 bytes of random data.
+ */
 public class SecureRandomDemo {
 
     public static void main(String[] args) {
         //Amazon Corretto Crypto Provider can also be enabled by uncommenting the line below.
         //AmazonCorrettoCryptoProvider.install();
 
+        //Initialize the SecureRandom object.
         SecureRandom secureRandom = new SecureRandom();
         byte[] data = new byte[16000];
 
