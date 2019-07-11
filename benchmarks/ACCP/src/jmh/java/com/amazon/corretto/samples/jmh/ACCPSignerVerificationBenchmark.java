@@ -20,63 +20,58 @@ import java.security.SignatureException;
 public class ACCPSignerVerificationBenchmark {
 
     /**
-     * VerificationSignerState class instantiates the Signature object for default crypto provider and Amazon Corretto
-     * Crypto Provider.
+     * VerificationSignerState class instantiates the Signature object for the default crypto provider and the Amazon
+     * Corretto Crypto Provider.
      *
-     * It also creates a signed message that is used by signature.verify to benchmark.
+     * It also creates a signed data that is used by accpSigner.verify to benchmark.
      */
     @State(Scope.Thread)
     public static class VerificationSignerState {
 
-        KeyPair keyPair;
-        Signature defaultSignature;
-        Signature signature;
-        Signature creator;
-        byte[] message;
-        byte[] sig;
+        Signature defaultVerifier;
+        Signature accpVerifier;
+        byte[] data;
+        byte[] data_signature;
 
         @Setup(Level.Trial)
         public void doSetup() throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeyException,
                 SignatureException {
             AmazonCorrettoCryptoProvider.install();
+
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
             keyPairGenerator.initialize(2048);
-
-            defaultSignature = Signature.getInstance("SHA512WithRSA", "SunRsaSign");
-
-            signature = Signature.getInstance("SHA512WithRSA");
-            creator = Signature.getInstance("SHA512WithRSA");
-
-            this.keyPair = keyPairGenerator.generateKeyPair();
+            final KeyPair keyPair = keyPairGenerator.generateKeyPair();
 
             SecureRandom secureRandom = new SecureRandom();
+            this.data = new byte[1024];
+            secureRandom.nextBytes(this.data);
 
-            this.message = new byte[1024];
-            secureRandom.nextBytes(this.message);
-
-            //Using a different signature object inorder to prevent interference.
+            //Creating a data and a accpVerifier. This will be used to benchmark the verify() function.
+            final Signature creator = Signature.getInstance("SHA512WithRSA",
+                    AmazonCorrettoCryptoProvider.PROVIDER_NAME);
             creator.initSign(keyPair.getPrivate());
-            creator.update(message);
+            creator.update(data);
+            data_signature = creator.sign();
 
-            sig = creator.sign();
+            defaultVerifier = Signature.getInstance("SHA512WithRSA", "SunRsaSign");
+            defaultVerifier.initVerify(keyPair.getPublic());
 
-            defaultSignature.initVerify(keyPair.getPublic());
-
-            signature.initVerify(keyPair.getPublic());
+            accpVerifier = Signature.getInstance("SHA512WithRSA", AmazonCorrettoCryptoProvider.PROVIDER_NAME);
+            accpVerifier.initVerify(keyPair.getPublic());
         }
     }
 
     @Benchmark
     @Group("AccpSHA512WithRSABenchmark")
     public boolean testAccpBenchmark(VerificationSignerState verificationState) throws SignatureException {
-        verificationState.signature.update(verificationState.message);
-        return verificationState.signature.verify(verificationState.sig);
+        verificationState.accpVerifier.update(verificationState.data);
+        return verificationState.accpVerifier.verify(verificationState.data_signature);
     }
 
     @Benchmark
-    @Group("SHA512WithRSABenchmark")
+    @Group("DefaultSHA512WithRSABenchmark")
     public boolean testDefaultBenchmark(VerificationSignerState verificationState) throws SignatureException {
-        verificationState.defaultSignature.update(verificationState.message);
-        return verificationState.defaultSignature.verify(verificationState.sig);
+        verificationState.defaultVerifier.update(verificationState.data);
+        return verificationState.defaultVerifier.verify(verificationState.data_signature);
     }
 }

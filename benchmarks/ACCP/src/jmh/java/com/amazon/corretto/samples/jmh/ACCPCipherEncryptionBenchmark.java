@@ -23,15 +23,15 @@ import java.security.SecureRandom;
 public class ACCPCipherEncryptionBenchmark {
 
     /**
-     * EncryptionCipherState creates and initializes the encryption cipher for default crypto provider and Amazon
-     * Corretto Crypto Provider. The cipher is initialized for 'AES/GCM/NoPadding'.
+     * EncryptionCipherState creates and initializes the encryption accpCipher for the default crypto provider and the
+     * Amazon Corretto Crypto Provider. The accpCipher is initialized for 'AES/GCM/NoPadding'.
      *
-     * The class also generates new initialization vector and message for each iteration.
+     * The class also generates new initialization vector and data for each iteration.
      */
     @State(Scope.Thread)
     public static class EncryptionCipherState {
 
-        Cipher cipher;
+        Cipher accpCipher;
         Cipher defaultCipher;
         byte[] message;
 
@@ -42,7 +42,7 @@ public class ACCPCipherEncryptionBenchmark {
         public void doSetup() throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException {
             AmazonCorrettoCryptoProvider.install();
 
-            cipher = Cipher.getInstance("AES/GCM/NoPadding");
+            accpCipher = Cipher.getInstance("AES/GCM/NoPadding", AmazonCorrettoCryptoProvider.PROVIDER_NAME);
             defaultCipher = Cipher.getInstance("AES/GCM/NoPadding", "SunJCE");
             secureRandom = new SecureRandom();
 
@@ -62,7 +62,7 @@ public class ACCPCipherEncryptionBenchmark {
 
             GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
 
-            cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, parameterSpec);
+            accpCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, parameterSpec);
             defaultCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, parameterSpec);
         }
     }
@@ -72,10 +72,10 @@ public class ACCPCipherEncryptionBenchmark {
     public byte[] testAccpCipher(EncryptionCipherState stateClass) throws BadPaddingException,
             IllegalBlockSizeException {
 
-        return stateClass.cipher.doFinal(stateClass.message);
+        return stateClass.accpCipher.doFinal(stateClass.message);
     }
 
-    @Group("AESGCMCipher")
+    @Group("DefaultAESGCMCipher")
     @Benchmark
     public byte[] testDefaultCipher(EncryptionCipherState stateClass) throws BadPaddingException,
             IllegalBlockSizeException {

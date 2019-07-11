@@ -13,7 +13,7 @@ import java.security.SecureRandom;
 public class ACCPSecureRandomBenchmark {
 
     /**
-     * SecureRandomState creates the SecureRandom object for default crypto provider and Amazon Corretto Crypto
+     * SecureRandomState creates the SecureRandom object for the default crypto provider and the Amazon Corretto Crypto
      * Provider.
      *
      * It also initializes a buffer for random bytes.
@@ -21,7 +21,7 @@ public class ACCPSecureRandomBenchmark {
     @State(Scope.Thread)
     public static class SecureRandomState {
 
-        SecureRandom secureRandom;
+        SecureRandom accpSecureRandom;
         SecureRandom defaultSecureRandom;
         byte[] data;
 
@@ -30,7 +30,7 @@ public class ACCPSecureRandomBenchmark {
             defaultSecureRandom = new SecureRandom();
 
             AmazonCorrettoCryptoProvider.install();
-            secureRandom = new SecureRandom();
+            accpSecureRandom = new SecureRandom();
 
             data = new byte[16000];
         }
@@ -39,12 +39,12 @@ public class ACCPSecureRandomBenchmark {
     @Benchmark
     @Group("ACCPSecureRandom")
     public byte[] testAccpSecureRandom(SecureRandomState state) {
-        state.secureRandom.nextBytes(state.data);
+        state.accpSecureRandom.nextBytes(state.data);
         return state.data;
     }
 
     @Benchmark
-    @Group("SecureRandom")
+    @Group("DefaultSecureRandom")
     public byte[] testSecureRandom(SecureRandomState state) {
         state.defaultSecureRandom.nextBytes(state.data);
         return state.data;
