@@ -44,7 +44,7 @@ $ docker run -it accp-demo
 ```
 This will launch a docker shell. The below steps need to be executed in the docker shell. 
 
-#### Running Demo using run_demo.sh
+#### Running demo using run_demo.sh
 
 The `run_demo.sh` provides a wrapper to execute the class within the jar file.
 
@@ -74,9 +74,30 @@ To run with ACCP enabled
 ./run_demo.sh cipher accp
 ```
 
+#### Running demo using jar
+
+To run with ACCP disabled
+```
+# To run SecureRandom
+java -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.SecureRandomDemo
+
+# To run Cipher
+java -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.CipherDemo
+```
+
+To run with ACCP enabled
+
+```
+# To run SecureRandom
+java -Djava.security.properties=amazon-corretto-crypto-provider.security -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.SecureRandomDemo
+
+# To run Cipher
+java -Djava.security.properties=amazon-corretto-crypto-provider.security -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.CipherDemo
+```
 
 
-#### Running Demo using Gradle
+
+#### Running demo using Gradle
 
 To run with ACCP disabled 
 
@@ -96,4 +117,6 @@ $ ./gradlew runRandomAccp
 
 # To run Cipher
 $ ./gradlew runCipherAccp
+
+
 ```
