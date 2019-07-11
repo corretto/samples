@@ -1,10 +1,40 @@
 package com.amazon.corretto.samples.jmh;
 
-import com.amazon.corretto.samples.jmh.util.SecureRandomState;
+import com.amazon.corretto.crypto.provider.AmazonCorrettoCryptoProvider;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Group;
+import org.openjdk.jmh.annotations.Level;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
+
+import java.security.SecureRandom;
 
 public class ACCPSecureRandomBenchmark {
+
+    /**
+     * SecureRandomState creates the secureRandom object for Default and Amazon Corretto Crypto Providers.
+     * It also initializes a buffer for random bytes.
+     */
+    @State(Scope.Thread)
+    public static class SecureRandomState {
+
+        SecureRandom secureRandom;
+        SecureRandom defaultSecureRandom;
+        byte[] data;
+
+        @Setup(Level.Trial)
+        public void doSetup() {
+            defaultSecureRandom = new SecureRandom();
+
+            AmazonCorrettoCryptoProvider.install();
+            secureRandom = new SecureRandom();
+
+            data = new byte[16000];
+
+
+        }
+    }
 
     @Benchmark
     @Group("ACCPSecureRandom")
