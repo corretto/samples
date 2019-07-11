@@ -21,13 +21,6 @@ jmh {
     // Benchmark mode. Available modes are: [Throughput/thrpt, AverageTime/avgt, SampleTime/sample, SingleShotTime/ss, All/all]
     benchmarkMode = ['avgt']
 
-    // Benchmark parameters: Seperated by '&' for parameter types, and ',' for multiple values
-    if (project.hasProperty('benchmarkParameters')) {
-        benchmarkParameters = data.split('&').inject([:]) { map, token ->
-            token.split('=').with { map[it[0]] = it[1] }
-        }
-    }
-
     resultFormat = 'json'
     resultsFile = file("${buildDir}/reports/jmh/results.json")
 }
