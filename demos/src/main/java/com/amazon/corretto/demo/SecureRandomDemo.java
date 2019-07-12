@@ -1,5 +1,7 @@
 package com.amazon.corretto.demo;
 
+import javax.crypto.Cipher;
+import javax.crypto.spec.GCMParameterSpec;
 import java.security.SecureRandom;
 
 /**
@@ -15,12 +17,23 @@ public class SecureRandomDemo {
         SecureRandom secureRandom = new SecureRandom();
         byte[] data = new byte[16000];
 
-        //Time the generation of 16000 bytes of random data.
-        long starttime = System.nanoTime();
-        secureRandom.nextBytes(data);
-        long endtime = System.nanoTime();
 
-        System.out.format("(%s) Time : %f ms\n",
-                secureRandom.getProvider().getName(), (endtime - starttime) / 1000000.0);
+        int j= 1;
+        for (int i=0; i <= 10000; i++) {
+
+            //Time the generation of 16000 bytes of random data.
+            long starttime = System.nanoTime();
+            secureRandom.nextBytes(data);
+            long endtime = System.nanoTime();
+
+
+            if (i % j == 0)
+            {
+                System.out.format("%5d iter: Generating ~16kb data (%s) Time : %f ms\n", j,
+                        secureRandom.getProvider().getName(), (endtime - starttime) / 1000000.0);
+                j = j * 10;
+            }
+
+        }
     }
 }
