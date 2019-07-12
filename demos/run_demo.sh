@@ -19,3 +19,5 @@ fi
 
 echo java $jvmArgs -cp build/libs/ACCPDemoApp-1.0-SNAPSHOT.jar $classname
 java $jvmArgs -cp build/libs/ACCPDemoApp-1.0-SNAPSHOT.jar $classname
+
+# java -cp build/libs/ACCPDemoApp-1.0-SNAPSHOT.jar:build/libs/AmazonCorrettoCryptoProvider-1.1.0-linux-x86_64.jar -Djava.security.properties=amazon-corretto-crypto-provider.security com.amazon.corretto.demo.CipherDemo
