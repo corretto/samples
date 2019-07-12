@@ -27,26 +27,35 @@ public class CipherDemo {
             secureRandom.nextBytes(key);
             SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
 
-            //Generate an initialization vector.
-            byte[] iv = new byte[12];
-            secureRandom.nextBytes(iv);
+            //Iterate 10000 times and emit the durations for 10, 100, 1000 and 10000.
+            int j= 1;
+            for (int i=0; i <= 10000; i++) {
+                //Generate an initialization vector.
+                byte[] iv = new byte[12];
+                secureRandom.nextBytes(iv);
 
-            //Generate data.
-            byte[] data = new byte[16000];
-            secureRandom.nextBytes(data);
+                //Generate data.
+                byte[] data = new byte[16000];
+                secureRandom.nextBytes(data);
 
-            //Create and initialize a cipher instance.
-            Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-            GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
-            cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, parameterSpec);
+                //Create and initialize a cipher instance.
+                Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+                GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
+                cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, parameterSpec);
 
+                //Encrypt the data.
+                long starttime = System.nanoTime();
+                byte[] encrypted = cipher.doFinal(data);
+                long endtime = System.nanoTime();
 
-            //Encrypt the data.
-            long starttime = System.nanoTime();
-            byte[] encrypted = cipher.doFinal(data);
-            long endtime = System.nanoTime();
+                if (i % j == 0)
+                {
+                    System.out.format("%5d iter: Encryting ~16kb (%s) Time : %f ms\n", j,
+                            cipher.getProvider().getName(), (endtime - starttime) / 1000000.0);
+                    j = j * 10;
+                }
 
-            System.out.format("(%s) Time : %f ms\n", cipher.getProvider().getName(), (endtime - starttime) / 1000000.0);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
