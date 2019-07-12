@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    compile files('../lib/AmazonCorrettoCryptoProvider-1.0.3-linux-x86_64.jar')
+    implementation 'software.amazon.cryptools:AmazonCorrettoCryptoProvider:1.1.0:linux-x86_64'
 }
 
 jmh {
