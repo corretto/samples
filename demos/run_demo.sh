@@ -2,7 +2,7 @@
 
 #Wrapper to run the jar file.
 if [ $# -ne 2 ]; then
-    echo "Usage: ./run_demo.sh <mode> <provider>"
+    echo "Usage: ./run_demo.sh <secureRandom/cipher> <default/accp>"
     exit 1
 fi
 
@@ -17,4 +17,5 @@ if [ $2 = "accp" ]; then
     jvmArgs="-Djava.security.properties=amazon-corretto-crypto-provider.security"
 fi
 
-java $jvmArgs -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar $classname
+echo java $jvmArgs -cp build/libs/ACCPDemoApp-1.0-SNAPSHOT.jar $classname
+java $jvmArgs -cp build/libs/ACCPDemoApp-1.0-SNAPSHOT.jar $classname

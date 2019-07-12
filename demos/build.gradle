@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.amazon.corretto.demo'
@@ -9,9 +10,10 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    flatDir {
-        dirs 'lib'
-    }
+}
+
+application {
+    mainClassName = "com.amazon.corretto.demo.SecureRandomDemo"
 }
 
 task(runRandomDefault, dependsOn: 'build', type: JavaExec) {
@@ -37,5 +39,5 @@ task(runCipherAccp, dependsOn: 'build', type: JavaExec) {
 }
 
 dependencies {
-    implementation name: 'AmazonCorrettoCryptoProvider-1.0.3-linux-x86_64'
+    compile 'software.amazon.cryptools:AmazonCorrettoCryptoProvider:1.1.0:linux-x86_64'
 }
