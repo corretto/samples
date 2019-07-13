@@ -22,7 +22,7 @@ To run with ACCP disabled
 $ ./gradlew runRandomDefault
 
 # To run Cipher
-$ ./gradlew runCipher Default
+$ ./gradlew runCipherDefault
 ```
 
 To run with ACCP enabled 
