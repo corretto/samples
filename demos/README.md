@@ -58,44 +58,21 @@ provider: default or accp
 To run with ACCP disabled
 ```
 # To run SecureRandom
-./run_demo.sh secureRandom default
+./build/run_demo.sh secureRandom default
 
 # To run Cipher
-./run_demo.sh cipher default
+./build/run_demo.sh cipher default
 ```
 
 To run with ACCP enabled
 
 ```
 # To run SecureRandom
-./run_demo.sh secureRandom accp
+./build/run_demo.sh secureRandom accp
 
 #To run Cipher
-./run_demo.sh cipher accp
+./build/run_demo.sh cipher accp
 ```
-
-#### Running demo using jar
-
-To run with ACCP disabled
-```
-# To run SecureRandom
-java -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.SecureRandomDemo
-
-# To run Cipher
-java -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.CipherDemo
-```
-
-To run with ACCP enabled
-
-```
-# To run SecureRandom
-java -Djava.security.properties=amazon-corretto-crypto-provider.security -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.SecureRandomDemo
-
-# To run Cipher
-java -Djava.security.properties=amazon-corretto-crypto-provider.security -cp build/libs/amazoncorrettocryptoprovider-1.0-SNAPSHOT.jar com.amazon.corretto.demo.CipherDemo
-```
-
-
 
 #### Running demo using Gradle
 
