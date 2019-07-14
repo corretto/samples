@@ -5,6 +5,8 @@ This is a repo where we will collect samples for performance improvements and ne
 ## Available samples
 `jmh-benchmarks` -> Benchmarks on different java functions optimized by Corretto.
 
+`accp-demos` -> Demo code for using ACCP (Amazon Corretto Crypto Provider).
+
 ## License Summary
 
 This sample code is made available under a modified MIT license. See the LICENSE file.
