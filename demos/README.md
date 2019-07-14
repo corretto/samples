@@ -50,7 +50,7 @@ The `run_demo.sh` provides a wrapper to execute the class within the jar file.
 
 Format: 
 ```
-./run_demo.sh <mode> <provider>
+./build/run_demo.sh <mode> <provider>
 mode: secureRandom or cipher
 provider: default or accp
 ```
