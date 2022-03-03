@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+}
+
+group 'com.amazon.corretto.demo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+task(runHeapMemoryAfterGC, dependsOn: 'build', type: JavaExec) {
+    main = 'com.amazon.corretto.demo.HeapMemoryAfterGCDemo'
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs ''
+}
+
+//task(runRandomAccp, dependsOn: 'build', type: JavaExec) {
+//    main = 'com.amazon.corretto.demo.SecureRandomDemo'
+//    classpath = sourceSets.main.runtimeClasspath
+//    jvmArgs '-Djava.security.properties=amazon-corretto-crypto-provider.security'
+//}
+
+//task(runCipherDefault, dependsOn: 'build', type: JavaExec) {
+//    main = 'com.amazon.corretto.demo.CipherDemo'
+//    classpath = sourceSets.main.runtimeClasspath
+//}
+
+//task(runCipherAccp, dependsOn: 'build', type: JavaExec) {
+//    main = 'com.amazon.corretto.demo.CipherDemo'
+//    classpath = sourceSets.main.runtimeClasspath
+//    jvmArgs '-Djava.security.properties=amazon-corretto-crypto-provider.security'
+//}
+
+//dependencies {
+//    compile 'software.amazon.cryptools:AmazonCorrettoCryptoProvider:1.1.0:linux-x86_64'
+//}
+
+task createRunDemo() {
+    doLast {
+        File file = new File(buildDir, "run_demo.sh")
+        file.text = """#!/bin/bash
+
+#Wrapper to run the jar file.
+if [ \$# -ne 0 ]; then
+//    echo "Usage: ./run_demo.sh <secureRandom/cipher> <default/accp>"
+    echo "Usage: ./run_demo.sh"
+    exit 1
+fi
+
+classname="com.amazon.corretto.demo.HeapMemoryAfterGCDemo"
+jvmArgs=""
+
+//if [ \$1 = "cipher" ]; then
+//    classname="com.amazon.corretto.demo.CipherDemo"
+//fi
+
+//if [ \$2 = "accp" ]; then
+//    jvmArgs="-Djava.security.properties=amazon-corretto-crypto-provider.security"
+//fi
+
+echo java \$jvmArgs -cp \\\$classpath \$classname
+java \$jvmArgs -cp $sourceSets.main.runtimeClasspath.asPath \$classname
+"""
+        file.setExecutable(true, false)
+    }
+}
+
+createRunDemo.dependsOn(build)

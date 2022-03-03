@@ -1,0 +1,791 @@
+22:23:31.327 [INFO] [org.gradle.internal.nativeintegration.services.NativeServices] Initialized native services in: /local/home/hohensee/.gradle/native
+22:23:31.497 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClient] Executing build a4b06617-9763-4df3-bb23-d8f232bf7f2b in daemon client {pid=97086}
+22:23:31.503 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface eth0
+22:23:31.503 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+22:23:31.504 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /fe80:0:0:0:10d4:ffff:fea2:3717%eth0
+22:23:31.504 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /10.200.140.176
+22:23:31.504 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo
+22:23:31.504 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
+22:23:31.504 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /0:0:0:0:0:0:0:1%lo
+22:23:31.504 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
+22:23:31.510 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on daemon addresses registry.
+22:23:31.512 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+22:23:31.516 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+22:23:31.520 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpOutgoingConnector] Attempting to connect to [e3eda1a8-ac8d-41ec-841c-c5446057f499 port:45963, addresses:[/0:0:0:0:0:0:0:1, /127.0.0.1]].
+22:23:31.520 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpOutgoingConnector] Trying to connect to address /0:0:0:0:0:0:0:1.
+22:23:31.523 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpOutgoingConnector] Connected to address /0:0:0:0:0:0:0:1:45963.
+22:23:31.535 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClient] Connected to daemon DaemonInfo{pid=77779, address=[e3eda1a8-ac8d-41ec-841c-c5446057f499 port:45963, addresses:[/0:0:0:0:0:0:0:1, /127.0.0.1]], state=Idle, lastBusy=1646346039894, context=DefaultDaemonContext[uid=15b6ffb0-f881-41f1-ab29-458a90c59a48,javaHome=/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64,daemonRegistryDir=/local/home/hohensee/.gradle/daemon,pid=77779,idleTimeout=10800000,priority=NORMAL,daemonOpts=--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,-XX:MaxMetaspaceSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}. Dispatching request Build{id=a4b06617-9763-4df3-bb23-d8f232bf7f2b, currentDir=/local/home/hohensee/workspaces/samples/jmx-demos}.
+22:23:31.536 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClientConnection] thread 1: dispatching class org.gradle.launcher.daemon.protocol.Build
+22:23:31.539 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClient] Received result org.gradle.launcher.daemon.protocol.BuildStarted@3b96c42e from daemon DaemonInfo{pid=77779, address=[e3eda1a8-ac8d-41ec-841c-c5446057f499 port:45963, addresses:[/0:0:0:0:0:0:0:1, /127.0.0.1]], state=Idle, lastBusy=1646346039894, context=DefaultDaemonContext[uid=15b6ffb0-f881-41f1-ab29-458a90c59a48,javaHome=/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64,daemonRegistryDir=/local/home/hohensee/.gradle/daemon,pid=77779,idleTimeout=10800000,priority=NORMAL,daemonOpts=--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,-XX:MaxMetaspaceSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]} (build should be starting).
+22:23:31.539 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 77779). The daemon log file: /local/home/hohensee/.gradle/daemon/5.5/daemon-77779.out.log
+22:23:31.539 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting 9th build in daemon [uptime: 22 mins 24.43 secs, performance: 100%, non-heap usage: 26% of 268.4 MB]
+22:23:31.539 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+22:23:31.539 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=15b6ffb0-f881-41f1-ab29-458a90c59a48,javaHome=/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64,daemonRegistryDir=/local/home/hohensee/.gradle/daemon,pid=77779,idleTimeout=10800000,priority=NORMAL,daemonOpts=--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,-XX:MaxMetaspaceSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+22:23:31.540 [INFO] [org.gradle.internal.work.DefaultWorkerLeaseService] Using 40 worker leases.
+22:23:31.542 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for fileHashes, path /local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes/fileHashes.bin, access org.gradle.cache.internal.DefaultCacheAccess@1f1768df
+22:23:31.542 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for file hash cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes)
+22:23:31.542 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on file hash cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes).
+22:23:31.542 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on file hash cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes).
+22:23:31.543 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Run build' started
+22:23:31.543 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1 started (1 worker(s) in use).
+22:23:31.543 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Daemon worker Thread 5: acquired lock on root.1
+22:23:31.543 [INFO] [org.gradle.internal.buildevents.BuildLogger] Starting Build
+22:23:31.543 [DEBUG] [org.gradle.internal.buildevents.BuildLogger] Gradle user home: /local/home/hohensee/.gradle
+22:23:31.543 [DEBUG] [org.gradle.internal.buildevents.BuildLogger] Current dir: /local/home/hohensee/workspaces/samples/jmx-demos
+22:23:31.543 [DEBUG] [org.gradle.internal.buildevents.BuildLogger] Settings file: null
+22:23:31.543 [DEBUG] [org.gradle.internal.buildevents.BuildLogger] Build file: null
+22:23:31.543 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Load build' started
+22:23:31.543 [DEBUG] [org.gradle.initialization.buildsrc.BuildSourceBuilder] Gradle source dir does not exist. We leave.
+22:23:31.544 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Evaluate settings' started
+22:23:31.544 [DEBUG] [org.gradle.initialization.DefaultGradlePropertiesLoader] Found env project properties: []
+22:23:31.544 [DEBUG] [org.gradle.initialization.DefaultGradlePropertiesLoader] Found system project properties: []
+22:23:31.544 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply script settings.gradle to settings 'jmx-demos'' started
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on cp_settings generic class cache for settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle' (/local/home/hohensee/.gradle/caches/5.5/scripts/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.545 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on cp_settings generic class cache for settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle' (/local/home/hohensee/.gradle/caches/5.5/scripts/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.546 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings generic class cache for settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle' (/local/home/hohensee/.gradle/caches/5.5/scripts/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.546 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.546 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.546 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.546 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/cp_settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.546 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.547 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.547 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.547 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.547 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.547 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on settings generic class cache for settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle' (/local/home/hohensee/.gradle/caches/5.5/scripts/5n20b6plhi6mx1zbt0ezyyrsj/settings/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.547 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on settings generic class cache for settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle' (/local/home/hohensee/.gradle/caches/5.5/scripts/5n20b6plhi6mx1zbt0ezyyrsj/settings/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.548 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings generic class cache for settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle' (/local/home/hohensee/.gradle/caches/5.5/scripts/5n20b6plhi6mx1zbt0ezyyrsj/settings/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.548 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.548 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire shared lock on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.548 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.548 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on settings remapped class cache for 5n20b6plhi6mx1zbt0ezyyrsj (/local/home/hohensee/.gradle/caches/5.5/scripts-remapped/settings_bjplymx0dz1033laaf9jca5d3/5n20b6plhi6mx1zbt0ezyyrsj/settings74e694b976d6abaa826c8abac43e9de8).
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply script settings.gradle to settings 'jmx-demos''
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply script settings.gradle to settings 'jmx-demos'' completed
+22:23:31.553 [DEBUG] [org.gradle.initialization.ScriptEvaluatingSettingsProcessor] Timing: Processing settings took: 0.009 secs
+22:23:31.553 [INFO] [org.gradle.internal.buildevents.BuildLogger] Settings evaluated using settings file '/local/home/hohensee/workspaces/samples/jmx-demos/settings.gradle'.
+22:23:31.553 [DEBUG] [org.gradle.caching.configuration.internal.DefaultBuildCacheConfiguration] Found class org.gradle.caching.local.internal.DirectoryBuildCacheServiceFactory registered for class org.gradle.caching.local.DirectoryBuildCache
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Finalize build cache configuration' started
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Finalize build cache configuration'
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Finalize build cache configuration' completed
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Evaluate settings'
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Evaluate settings' completed
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Load build'
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Load build' completed
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Configure build' started
+22:23:31.553 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Load projects' started
+22:23:31.554 [DEBUG] [org.gradle.model.internal.registry.DefaultModelRegistry] Project : - Transitioning model element '<root>' from state Registered to Created
+22:23:31.554 [DEBUG] [org.gradle.model.internal.registry.DefaultModelRegistry] Project : - Transitioning model element '<root>' to state Discovered.
+22:23:31.554 [DEBUG] [org.gradle.model.internal.registry.DefaultModelRegistry] Project : - Transitioning model element '<root>' to state Created.
+22:23:31.554 [DEBUG] [org.gradle.initialization.ProjectPropertySettingBuildLoader] Looking for project properties from: /local/home/hohensee/workspaces/samples/jmx-demos/gradle.properties
+22:23:31.554 [DEBUG] [org.gradle.initialization.ProjectPropertySettingBuildLoader] project property file does not exists. We continue!
+22:23:31.554 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Load projects'
+22:23:31.554 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Load projects' completed
+22:23:31.554 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify projectsLoaded listeners' started
+22:23:31.554 [INFO] [org.gradle.internal.buildevents.BuildLogger] Projects loaded. Root project using build file '/local/home/hohensee/workspaces/samples/jmx-demos/build.gradle'.
+22:23:31.554 [INFO] [org.gradle.internal.buildevents.BuildLogger] Included projects: [root project 'JMXDemoApp']
+22:23:31.554 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute 'rootProject {}' action' started
+22:23:31.554 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Daemon worker Thread 5: acquired lock on :
+22:23:31.554 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Cross-configure project :' started
+22:23:31.554 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Cross-configure project :'
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Cross-configure project :' completed
+22:23:31.555 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Daemon worker Thread 5: released lock on :
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute 'rootProject {}' action'
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute 'rootProject {}' action' completed
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Notify projectsLoaded listeners'
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify projectsLoaded listeners' completed
+22:23:31.555 [LIFECYCLE] [org.gradle.internal.logging.progress.ProgressLoggerFactory] 
+22:23:31.555 [LIFECYCLE] [org.gradle.internal.logging.progress.ProgressLoggerFactory] > Configure project :
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Configure project :' started
+22:23:31.555 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Daemon worker Thread 5: acquired lock on :
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify beforeEvaluate listeners of :' started
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Notify beforeEvaluate listeners of :'
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify beforeEvaluate listeners of :' completed
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :prepareKotlinBuildScriptModel' started
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :prepareKotlinBuildScriptModel'
+22:23:31.555 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :prepareKotlinBuildScriptModel' completed
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.build-init to root project 'JMXDemoApp'' started
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :init' started
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :init'
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :init' completed
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.build-init to root project 'JMXDemoApp''
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.build-init to root project 'JMXDemoApp'' completed
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.wrapper to root project 'JMXDemoApp'' started
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :wrapper' started
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :wrapper'
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :wrapper' completed
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.wrapper to root project 'JMXDemoApp''
+22:23:31.556 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.wrapper to root project 'JMXDemoApp'' completed
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.help-tasks to root project 'JMXDemoApp'' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :help' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :help'
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :help' completed
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :projects' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :projects'
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :projects' completed
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :tasks' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :tasks'
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :tasks' completed
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :properties' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :properties'
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :properties' completed
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :dependencyInsight' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :dependencyInsight'
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :dependencyInsight' completed
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :dependencies' started
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :dependencies'
+22:23:31.557 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :dependencies' completed
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :buildEnvironment' started
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :buildEnvironment'
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :buildEnvironment' completed
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :components' started
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :components'
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :components' completed
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :model' started
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :model'
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :model' completed
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :dependentComponents' started
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :dependentComponents'
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :dependentComponents' completed
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.help-tasks to root project 'JMXDemoApp''
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.help-tasks to root project 'JMXDemoApp'' completed
+22:23:31.558 [INFO] [org.gradle.configuration.project.BuildScriptProcessor] Evaluating root project 'JMXDemoApp' using build file '/local/home/hohensee/workspaces/samples/jmx-demos/build.gradle'.
+22:23:31.558 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply script build.gradle to root project 'JMXDemoApp'' started
+22:23:31.559 [DEBUG] [org.gradle.api.internal.artifacts.mvnsettings.DefaultLocalMavenRepositoryLocator] No local repository in Settings file defined. Using default path: /home/hohensee/.m2/repository
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.java to root project 'JMXDemoApp'' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.api.plugins.JavaBasePlugin to root project 'JMXDemoApp'' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.api.plugins.BasePlugin to root project 'JMXDemoApp'' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.language.base.plugins.LifecycleBasePlugin to root project 'JMXDemoApp'' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :clean' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :clean'
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :clean' completed
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :assemble' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :assemble'
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :assemble' completed
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :check' started
+22:23:31.560 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :check'
+22:23:31.561 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :check' completed
+22:23:31.561 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :build' started
+22:23:31.561 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :build'
+22:23:31.561 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :build' completed
+22:23:31.561 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.language.base.plugins.LifecycleBasePlugin to root project 'JMXDemoApp''
+22:23:31.561 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.language.base.plugins.LifecycleBasePlugin to root project 'JMXDemoApp'' completed
+22:23:31.561 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for workingDirs, path /local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/vcsMetadata-1/workingDirs.bin, access org.gradle.cache.internal.DefaultCacheAccess@30f4c037
+22:23:31.561 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for resourceHashesCache, path /local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes/resourceHashesCache.bin, access org.gradle.cache.internal.DefaultCacheAccess@1f1768df
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for md-supplier, path /local/home/hohensee/.gradle/caches/5.5/md-supplier/md-supplier.bin, access org.gradle.cache.internal.DefaultCacheAccess@26237a86
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for cache directory md-supplier (/local/home/hohensee/.gradle/caches/5.5/md-supplier)
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on cache directory md-supplier (/local/home/hohensee/.gradle/caches/5.5/md-supplier).
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on cache directory md-supplier (/local/home/hohensee/.gradle/caches/5.5/md-supplier).
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for md-rule, path /local/home/hohensee/.gradle/caches/5.5/md-rule/md-rule.bin, access org.gradle.cache.internal.DefaultCacheAccess@640416cd
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for cache directory md-rule (/local/home/hohensee/.gradle/caches/5.5/md-rule)
+22:23:31.562 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on cache directory md-rule (/local/home/hohensee/.gradle/caches/5.5/md-rule).
+22:23:31.563 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on cache directory md-rule (/local/home/hohensee/.gradle/caches/5.5/md-rule).
+22:23:31.563 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for outputFiles, path /local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup/outputFiles.bin, access org.gradle.cache.internal.DefaultCacheAccess@3439625a
+22:23:31.563 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for Build Output Cleanup Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup)
+22:23:31.563 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on Build Output Cleanup Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup).
+22:23:31.563 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on Build Output Cleanup Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup).
+22:23:31.564 [DEBUG] [org.gradle.internal.locking.LockFileReaderWriter] Lockfiles root: /local/home/hohensee/workspaces/samples/jmx-demos/gradle/dependency-locks
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.api.plugins.BasePlugin to root project 'JMXDemoApp''
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.api.plugins.BasePlugin to root project 'JMXDemoApp'' completed
+22:23:31.564 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.api.plugins.ReportingBasePlugin to root project 'JMXDemoApp'' started
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.api.plugins.ReportingBasePlugin to root project 'JMXDemoApp''
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.api.plugins.ReportingBasePlugin to root project 'JMXDemoApp'' completed
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :buildNeeded' started
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :buildNeeded'
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :buildNeeded' completed
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :buildDependents' started
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :buildDependents'
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :buildDependents' completed
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.api.plugins.JavaBasePlugin to root project 'JMXDemoApp''
+22:23:31.565 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.api.plugins.JavaBasePlugin to root project 'JMXDemoApp'' completed
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.566 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :processResources' started
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :processResources'
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :processResources' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :compileJava' started
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :compileJava'
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :compileJava' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :classes' started
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :classes'
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :classes' completed
+22:23:31.567 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.568 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :processTestResources' started
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :processTestResources'
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :processTestResources' completed
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :compileTestJava' started
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :compileTestJava'
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :compileTestJava' completed
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :testClasses' started
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :testClasses'
+22:23:31.569 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :testClasses' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :javadoc' started
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :javadoc'
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :javadoc' completed
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :test' started
+22:23:31.570 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :test'
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :test' completed
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :jar' started
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Register task :jar'
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Register task :jar' completed
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.571 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.572 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply plugin org.gradle.java to root project 'JMXDemoApp''
+22:23:31.572 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply plugin org.gradle.java to root project 'JMXDemoApp'' completed
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :runHeapMemoryAfterGC' started
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :runHeapMemoryAfterGC'
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :runHeapMemoryAfterGC' completed
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :createRunDemo' started
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :createRunDemo'
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :createRunDemo' completed
+22:23:31.573 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :build' started
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :build'
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :build' completed
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Apply script build.gradle to root project 'JMXDemoApp''
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Apply script build.gradle to root project 'JMXDemoApp'' completed
+22:23:31.574 [DEBUG] [org.gradle.configuration.project.BuildScriptProcessor] Timing: Running the build script took 0.015 secs
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify afterEvaluate listeners of :' started
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Notify afterEvaluate listeners of :'
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify afterEvaluate listeners of :' completed
+22:23:31.574 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Daemon worker Thread 5: released lock on :
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Configure project :'
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Configure project :' completed
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify projectsEvaluated listeners' started
+22:23:31.574 [INFO] [org.gradle.internal.buildevents.BuildLogger] All projects evaluated.
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Notify projectsEvaluated listeners'
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify projectsEvaluated listeners' completed
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Configure build'
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Configure build' completed
+22:23:31.574 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Calculate task graph' started
+22:23:31.575 [INFO] [org.gradle.execution.TaskNameResolvingBuildConfigurationAction] Selected primary task 'runHeapMemoryAfterGC' from project :
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :classes' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :classes'
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :classes' completed
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :check' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :check'
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :check' completed
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :assemble' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.576 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :jar' started
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :jar'
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :jar' completed
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :assemble'
+22:23:31.577 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :assemble' completed
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :compileJava' started
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :compileJava'
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :compileJava' completed
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :processResources' started
+22:23:31.578 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.579 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.579 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.579 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :processResources'
+22:23:31.579 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :processResources' completed
+22:23:31.579 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for annotation-processors, path /local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileContent/annotation-processors.bin, access org.gradle.cache.internal.DefaultCacheAccess@4116f006
+22:23:31.579 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for file content cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileContent)
+22:23:31.579 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on file content cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileContent).
+22:23:31.579 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on file content cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileContent).
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :test' started
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.580 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.581 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.581 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.581 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.581 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :test'
+22:23:31.581 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :test' completed
+22:23:31.582 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :testClasses' started
+22:23:31.582 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.582 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.582 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.582 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :testClasses'
+22:23:31.582 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :testClasses' completed
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :processTestResources' started
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :processTestResources'
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :processTestResources' completed
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :compileTestJava' started
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :compileTestJava'
+22:23:31.583 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :compileTestJava' completed
+22:23:31.584 [DEBUG] [org.gradle.execution.taskgraph.DefaultTaskExecutionGraph] Timing: Creating the DAG took 0.009 secs
+22:23:31.585 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Calculate task graph'
+22:23:31.585 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Calculate task graph' completed
+22:23:31.585 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Run tasks' started
+22:23:31.585 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify task graph whenReady listeners' started
+22:23:31.585 [INFO] [org.gradle.internal.buildevents.BuildLogger] Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':assemble', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':check', task ':build', task ':runHeapMemoryAfterGC']
+22:23:31.585 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Notify task graph whenReady listeners'
+22:23:31.585 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Notify task graph whenReady listeners' completed
+22:23:31.585 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Using 40 parallel executor threads
+22:23:31.586 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.587 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.587 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.587 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :compileJava (Thread[Execution worker for ':',5,main]) started.
+22:23:31.588 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Creating new cache for executionHistory, path /local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory/executionHistory.bin, access org.gradle.cache.internal.DefaultCacheAccess@1f42e9e0
+22:23:31.588 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Acquiring file lock for execution history cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory)
+22:23:31.588 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on execution history cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory).
+22:23:31.588 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on execution history cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory).
+22:23:31.588 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.588 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :compileJava UP-TO-DATE
+22:23:31.588 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :compileJava' started
+22:23:31.589 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':compileJava' into context took 0.0 secs.
+22:23:31.589 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :clean' started
+22:23:31.590 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' started
+22:23:31.590 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute container callback action'
+22:23:31.590 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute container callback action' completed
+22:23:31.590 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Realize task :clean'
+22:23:31.590 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Realize task :clean' completed
+22:23:31.590 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property destinationDir (Output) for task ':compileJava'
+22:23:31.591 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property options.annotationProcessorGeneratedSourcesDirectory (Output) for task ':compileJava'
+22:23:31.592 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveBeforeExecutionStateTaskExecuter] Implementation for task ':compileJava': org.gradle.api.tasks.compile.JavaCompile_Decorated@661f90611eb152ad2f532c15ea48b142
+22:23:31.592 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveBeforeExecutionStateTaskExecuter] Action implementations for task ':compileJava': [org.gradle.api.tasks.compile.JavaCompile_Decorated@661f90611eb152ad2f532c15ea48b142]
+22:23:31.592 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property classpath (CompileClasspath) for task ':compileJava'
+22:23:31.592 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Resolve dependencies of :compileClasspath' started
+22:23:31.593 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Resolve dependencies of :compileClasspath'
+22:23:31.593 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Resolve dependencies of :compileClasspath' completed
+22:23:31.593 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property options.annotationProcessorPath (Classpath) for task ':compileJava'
+22:23:31.593 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Resolve dependencies of :annotationProcessor' started
+22:23:31.593 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Resolve dependencies of :annotationProcessor'
+22:23:31.593 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Resolve dependencies of :annotationProcessor' completed
+22:23:31.593 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property options.bootstrapClasspath (CompileClasspath) for task ':compileJava'
+22:23:31.593 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property options.sourcepath (RelativePathInput) for task ':compileJava'
+22:23:31.594 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property source (RelativePathInput) for task ':compileJava'
+22:23:31.594 [INFO] [org.gradle.internal.execution.steps.ResolveCachingStateStep] Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+22:23:31.595 [DEBUG] [org.gradle.internal.execution.steps.SkipUpToDateStep] Determining if task ':compileJava' is up-to-date
+22:23:31.595 [INFO] [org.gradle.internal.execution.steps.SkipUpToDateStep] Skipping task ':compileJava' as it is up-to-date.
+22:23:31.595 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.595 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :compileJava'
+22:23:31.595 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :compileJava' completed
+22:23:31.595 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :compileJava (Thread[Execution worker for ':',5,main]) completed. Took 0.007 secs.
+22:23:31.595 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.595 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.595 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.595 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.595 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.595 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.595 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :processResources (Thread[Execution worker for ':',5,main]) started.
+22:23:31.595 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.595 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :processResources NO-SOURCE
+22:23:31.595 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :processResources' started
+22:23:31.596 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':processResources' into context took 0.0 secs.
+22:23:31.596 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property destinationDir (Output) for task ':processResources'
+22:23:31.596 [INFO] [org.gradle.api.internal.file.collections.DirectoryFileTree] file or directory '/local/home/hohensee/workspaces/samples/jmx-demos/src/main/resources', not found
+22:23:31.596 [INFO] [org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter] Skipping task ':processResources' as it has no source files and no previous output files.
+22:23:31.596 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.596 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :processResources'
+22:23:31.596 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :processResources' completed
+22:23:31.596 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :processResources (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.596 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.596 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Opening cache executionHistory.bin (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory/executionHistory.bin)
+22:23:31.596 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.596 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.596 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.596 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.596 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.597 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :classes (Thread[Execution worker for ':',5,main]) started.
+22:23:31.597 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.597 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :classes UP-TO-DATE
+22:23:31.597 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :classes' started
+22:23:31.597 [INFO] [org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter] Skipping task ':classes' as it has no actions.
+22:23:31.597 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :classes'
+22:23:31.597 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :classes' completed
+22:23:31.597 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :classes (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.597 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.597 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.597 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.597 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.597 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.597 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.597 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :jar (Thread[Execution worker for ':',5,main]) started.
+22:23:31.598 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Opening cache outputFiles.bin (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup/outputFiles.bin)
+22:23:31.603 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Opening cache fileHashes.bin (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes/fileHashes.bin)
+22:23:31.597 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.597 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :jar
+22:23:31.597 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :jar' started
+22:23:31.598 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':jar' into context took 0.0 secs.
+22:23:31.598 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property archiveFile (Output) for task ':jar'
+22:23:31.599 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveBeforeExecutionStateTaskExecuter] Implementation for task ':jar': org.gradle.api.tasks.bundling.Jar_Decorated@661f90611eb152ad2f532c15ea48b142
+22:23:31.599 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveBeforeExecutionStateTaskExecuter] Action implementations for task ':jar': [org.gradle.api.tasks.bundling.Jar_Decorated@a99261c4134b7d09f253f5300145274e]
+22:23:31.599 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property rootSpec$1 (RelativePathInput) for task ':jar'
+22:23:31.599 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property rootSpec$2 (RelativePathInput) for task ':jar'
+22:23:31.599 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property rootSpec$2$1 (RelativePathInput) for task ':jar'
+22:23:31.600 [INFO] [org.gradle.internal.execution.steps.ResolveCachingStateStep] Caching disabled for task ':jar' because:
+  Build cache is disabled
+22:23:31.600 [DEBUG] [org.gradle.internal.execution.steps.SkipUpToDateStep] Determining if task ':jar' is up-to-date
+22:23:31.600 [INFO] [org.gradle.internal.execution.steps.SkipUpToDateStep] Task ':jar' is not up-to-date because:
+  Output property 'archiveFile' file /local/home/hohensee/workspaces/samples/jmx-demos/build/libs/ACCPDemoApp-1.0-SNAPSHOT.jar has been removed.
+22:23:31.600 [DEBUG] [org.gradle.internal.execution.steps.CreateOutputsStep] Ensuring parent directory exists for property archiveFile at /local/home/hohensee/workspaces/samples/jmx-demos/build/libs/JMXDemoApp-1.0-SNAPSHOT.jar
+22:23:31.600 [DEBUG] [org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter] Executing actions for task ':jar'.
+22:23:31.600 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute copy for :jar' started
+22:23:31.603 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute copy for :jar'
+22:23:31.603 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute copy for :jar' completed
+22:23:31.603 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property archiveFile (Output) for task ':jar'
+22:23:31.604 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.604 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :jar'
+22:23:31.604 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :jar' completed
+22:23:31.604 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :jar (Thread[Execution worker for ':',5,main]) completed. Took 0.006 secs.
+22:23:31.604 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.604 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.604 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.604 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.604 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.604 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.604 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :assemble (Thread[Execution worker for ':',5,main]) started.
+22:23:31.604 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.604 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :assemble
+22:23:31.604 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :assemble' started
+22:23:31.604 [INFO] [org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter] Skipping task ':assemble' as it has no actions.
+22:23:31.604 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :assemble'
+22:23:31.604 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :assemble' completed
+22:23:31.604 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :assemble (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.604 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.605 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.605 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.605 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.605 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.605 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.605 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :compileTestJava (Thread[Execution worker for ':',5,main]) started.
+22:23:31.605 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.605 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :compileTestJava NO-SOURCE
+22:23:31.605 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :compileTestJava' started
+22:23:31.606 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':compileTestJava' into context took 0.0 secs.
+22:23:31.606 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property destinationDir (Output) for task ':compileTestJava'
+22:23:31.606 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property options.annotationProcessorGeneratedSourcesDirectory (Output) for task ':compileTestJava'
+22:23:31.606 [INFO] [org.gradle.api.internal.file.collections.DirectoryFileTree] file or directory '/local/home/hohensee/workspaces/samples/jmx-demos/src/test/java', not found
+22:23:31.606 [INFO] [org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter] Skipping task ':compileTestJava' as it has no source files and no previous output files.
+22:23:31.606 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.606 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :compileTestJava'
+22:23:31.606 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :compileTestJava' completed
+22:23:31.606 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :compileTestJava (Thread[Execution worker for ':',5,main]) completed. Took 0.001 secs.
+22:23:31.606 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.606 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.606 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.607 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.607 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.607 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.607 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :processTestResources (Thread[Execution worker for ':',5,main]) started.
+22:23:31.607 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.607 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :processTestResources NO-SOURCE
+22:23:31.607 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :processTestResources' started
+22:23:31.607 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':processTestResources' into context took 0.0 secs.
+22:23:31.607 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property destinationDir (Output) for task ':processTestResources'
+22:23:31.607 [INFO] [org.gradle.api.internal.file.collections.DirectoryFileTree] file or directory '/local/home/hohensee/workspaces/samples/jmx-demos/src/test/resources', not found
+22:23:31.607 [INFO] [org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter] Skipping task ':processTestResources' as it has no source files and no previous output files.
+22:23:31.607 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.607 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :processTestResources'
+22:23:31.607 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :processTestResources' completed
+22:23:31.607 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :processTestResources (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.607 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.607 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.607 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.608 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.608 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.608 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.608 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :testClasses (Thread[Execution worker for ':',5,main]) started.
+22:23:31.608 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.608 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :testClasses UP-TO-DATE
+22:23:31.608 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :testClasses' started
+22:23:31.608 [INFO] [org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter] Skipping task ':testClasses' as it has no actions.
+22:23:31.608 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :testClasses'
+22:23:31.608 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :testClasses' completed
+22:23:31.608 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :testClasses (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.608 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.608 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.608 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.609 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.609 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.609 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.609 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :test (Thread[Execution worker for ':',5,main]) started.
+22:23:31.609 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.609 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :test NO-SOURCE
+22:23:31.609 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :test' started
+22:23:31.609 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':test' into context took 0.0 secs.
+22:23:31.609 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property binResultsDir (Output) for task ':test'
+22:23:31.610 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property reports.enabledReports.html.destination (Output) for task ':test'
+22:23:31.610 [DEBUG] [org.gradle.api.internal.tasks.execution.DefaultTaskFingerprinter] Fingerprinting property reports.enabledReports.junitXml.destination (Output) for task ':test'
+22:23:31.610 [INFO] [org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter] Skipping task ':test' as it has no source files and no previous output files.
+22:23:31.610 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.610 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :test'
+22:23:31.610 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :test' completed
+22:23:31.610 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :test (Thread[Execution worker for ':',5,main]) completed. Took 0.001 secs.
+22:23:31.610 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.610 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.610 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.610 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.610 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.610 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.610 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :check (Thread[Execution worker for ':',5,main]) started.
+22:23:31.610 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.610 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :check UP-TO-DATE
+22:23:31.610 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :check' started
+22:23:31.610 [INFO] [org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter] Skipping task ':check' as it has no actions.
+22:23:31.610 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :check'
+22:23:31.610 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :check' completed
+22:23:31.610 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :check (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.610 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.611 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.611 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.611 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :build (Thread[Execution worker for ':',5,main]) started.
+22:23:31.611 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.611 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :build
+22:23:31.611 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :build' started
+22:23:31.611 [INFO] [org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter] Skipping task ':build' as it has no actions.
+22:23:31.611 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :build'
+22:23:31.611 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :build' completed
+22:23:31.611 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :build (Thread[Execution worker for ':',5,main]) completed. Took 0.0 secs.
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.611 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on :
+22:23:31.611 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 started (1 worker(s) in use).
+22:23:31.611 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': acquired lock on root.1.2
+22:23:31.611 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :runHeapMemoryAfterGC (Thread[Execution worker for ':',5,main]) started.
+22:23:31.671 [DEBUG] [org.gradle.process.internal.health.memory.MemoryManager] Emitting OS memory status event {Total: 168985849856, Free: 165405827072}
+22:23:31.671 [DEBUG] [org.gradle.launcher.daemon.server.health.LowMemoryDaemonExpirationStrategy] Received memory status update: {Total: 168985849856, Free: 165405827072}
+22:23:31.671 [DEBUG] [org.gradle.process.internal.health.memory.MemoryManager] Emitting JVM memory status event {Maximum: 536870912, Committed: 268435456}
+22:23:31.611 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] 
+22:23:31.611 [LIFECYCLE] [class org.gradle.internal.buildevents.TaskExecutionLogger] > Task :runHeapMemoryAfterGC FAILED
+22:23:31.611 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :runHeapMemoryAfterGC' started
+22:23:31.611 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Putting task artifact state for task ':runHeapMemoryAfterGC' into context took 0.0 secs.
+22:23:31.612 [INFO] [org.gradle.internal.execution.steps.ResolveCachingStateStep] Caching disabled for task ':runHeapMemoryAfterGC' because:
+  Build cache is disabled
+22:23:31.612 [DEBUG] [org.gradle.internal.execution.steps.SkipUpToDateStep] Determining if task ':runHeapMemoryAfterGC' is up-to-date
+22:23:31.612 [INFO] [org.gradle.internal.execution.steps.SkipUpToDateStep] Task ':runHeapMemoryAfterGC' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+22:23:31.612 [DEBUG] [org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter] Executing actions for task ':runHeapMemoryAfterGC'.
+22:23:31.612 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute exec for :runHeapMemoryAfterGC' started
+22:23:31.612 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Resolve dependencies of :runtimeClasspath' started
+22:23:31.612 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Resolve dependencies of :runtimeClasspath'
+22:23:31.612 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Resolve dependencies of :runtimeClasspath' completed
+22:23:31.613 [INFO] [org.gradle.process.internal.DefaultExecHandle] Starting process 'command '/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java''. Working directory: /local/home/hohensee/workspaces/samples/jmx-demos Command: /local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java  -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /local/home/hohensee/workspaces/samples/jmx-demos/build/classes/java/main:/local/home/hohensee/workspaces/samples/jmx-demos/build/resources/main com.amazon.corretto.demo.HeapMemoryAfterGCDemo
+22:23:31.613 [DEBUG] [org.gradle.process.internal.DefaultExecHandle] Environment for process 'command '/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java'': {PATH=.:/home/hohensee/bin:/home/hohensee/usr/bin:/home/hohensee/jdk/jdk-8/bin:/home/hohensee/.toolbox/bin:/home/hohensee/.runtimes/Ruby19/bin:/opt/apache-maven-3.6.2/bin:/usr/NX/bin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/linuxbrew/.linuxbrew/bin:/apollo/bin:/apollo/sbin:/apollo/env/ApolloCommandLine/bin:/apollo/env/SDETools/bin:/apollo/env/envImprovement/bin:/apollo/env/AmazonAwsCli/bin:/apollo/env/OdinTools/bin, HISTCONTROL=ignoredups, HISTSIZE=1000, JAVA_HOME=/home/hohensee/jdk/jdk-11, PROMPT=
+%{%}(%D %*) <%?> [%~]  %{%}
+%{%}%m %#%{%} , HOST=phh2, TERM=xterm-256color, LANG=en_US.UTF-8, XDG_SESSION_ID=54331, ANT_OPTS=-Xmx500m, GROUP=amazon, MACHTYPE=x86_64, MAIL=/var/spool/mail/hohensee, CLANG_PATH=/home/hohensee/clang/clang-3.4.2, BUILD_PLATFORM_OVERRIDE=AL2012, OSTYPE=linux, LOGNAME=hohensee, PWD=/home/hohensee/workspaces/samples/jmx-demos, MAVEN_PATH=/opt/apache-maven-3.6.2, RPROMPT=, RUBY_PATH=/home/hohensee/.runtimes/Ruby19, SHELL=/bin/zsh, LESSOPEN=||/usr/bin/lesspipe.sh %s, SSH_CLIENT=10.106.179.18 51188 22, SSH_TTY=/dev/pts/1, HOSTTYPE=x86_64-linux, REMOTEHOST=10.106.179.18, OLDPWD=/home/hohensee/workspaces/samples/jmx-demos, BRAZIL_WORKSPACE_DEFAULT_LAYOUT=short, USER=hohensee, SSH_CONNECTION=10.106.179.18 51188 10.200.140.176 22, JT_HOME=/home/hohensee/workspaces/jtreg/build/images/jtreg, HOSTNAME=dev-dsk-hohensee-1e-ccc30ec5, VENDOR=unknown, LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:, XDG_RUNTIME_DIR=/run/user/5172791, SHLVL=2, HOME=/home/hohensee, AUTO_TITLE_SCREENS=NO}
+22:23:31.613 [DEBUG] [org.gradle.process.internal.DefaultExecHandle] Changing state to: STARTING
+22:23:31.613 [DEBUG] [org.gradle.process.internal.DefaultExecHandle] Waiting until process started: command '/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java'.
+22:23:31.614 [DEBUG] [org.gradle.process.internal.DefaultExecHandle] Changing state to: STARTED
+22:23:31.614 [INFO] [org.gradle.process.internal.DefaultExecHandle] Successfully started process 'command '/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java''
+22:23:31.614 [DEBUG] [org.gradle.process.internal.ExecHandleRunner] waiting until streams are handled...
+22:23:31.715 [ERROR] [system.err] Error: Could not find or load main class 
+22:23:31.715 [ERROR] [system.err] Caused by: java.lang.ClassNotFoundException: 
+22:23:31.722 [DEBUG] [org.gradle.process.internal.DefaultExecHandle] Changing state to: FAILED
+22:23:31.722 [DEBUG] [org.gradle.process.internal.DefaultExecHandle] Process 'command '/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java'' finished with exit value 1 (state: FAILED)
+22:23:31.722 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Execute exec for :runHeapMemoryAfterGC'
+22:23:31.722 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Execute exec for :runHeapMemoryAfterGC' completed
+22:23:31.722 [DEBUG] [org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter] Removed task artifact state for {} from context.
+22:23:31.722 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Task :runHeapMemoryAfterGC'
+22:23:31.722 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Task :runHeapMemoryAfterGC' completed
+22:23:31.722 [INFO] [org.gradle.execution.plan.DefaultPlanExecutor] :runHeapMemoryAfterGC (Thread[Execution worker for ':',5,main]) completed. Took 0.111 secs.
+22:23:31.722 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on :
+22:23:31.723 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1.2 completed (1 worker(s) in use)
+22:23:31.723 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Execution worker for ':': released lock on root.1.2
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':',5,main]] finished, busy: 0.126 secs, idle: 0.011 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 26,5,main]] finished, busy: 0.0 secs, idle: 0.134 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 18,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 11,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 13,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 38,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 12,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 33,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 27,5,main]] finished, busy: 0.0 secs, idle: 0.134 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 17,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 7,5,main]] finished, busy: 0.0 secs, idle: 0.136 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 6,5,main]] finished, busy: 0.0 secs, idle: 0.137 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 16,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 4,5,main]] finished, busy: 0.0 secs, idle: 0.137 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 5,5,main]] finished, busy: 0.0 secs, idle: 0.137 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 3,5,main]] finished, busy: 0.0 secs, idle: 0.137 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 2,5,main]] finished, busy: 0.0 secs, idle: 0.137 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 28,5,main]] finished, busy: 0.0 secs, idle: 0.134 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 29,5,main]] finished, busy: 0.0 secs, idle: 0.134 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 30,5,main]] finished, busy: 0.0 secs, idle: 0.134 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 31,5,main]] finished, busy: 0.0 secs, idle: 0.134 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 32,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 35,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 34,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 36,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 37,5,main]] finished, busy: 0.0 secs, idle: 0.133 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Daemon worker Thread 5,5,main]] finished, busy: 0.0 secs, idle: 0.132 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 39,5,main]] finished, busy: 0.0 secs, idle: 0.132 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 14,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 15,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 25,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 24,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 23,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 22,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 21,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 20,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 19,5,main]] finished, busy: 0.0 secs, idle: 0.135 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 10,5,main]] finished, busy: 0.0 secs, idle: 0.136 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 9,5,main]] finished, busy: 0.0 secs, idle: 0.136 secs
+22:23:31.723 [DEBUG] [org.gradle.execution.plan.DefaultPlanExecutor] Execution worker [Thread[Execution worker for ':' Thread 8,5,main]] finished, busy: 0.0 secs, idle: 0.136 secs
+22:23:31.725 [DEBUG] [org.gradle.execution.taskgraph.DefaultTaskExecutionGraph] Timing: Executing the DAG took 0.14 secs
+22:23:31.727 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Run tasks'
+22:23:31.727 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Run tasks' completed
+22:23:31.728 [DEBUG] [org.gradle.internal.work.DefaultWorkerLeaseService] Worker lease root.1 completed (0 worker(s) in use)
+22:23:31.728 [DEBUG] [org.gradle.internal.resources.AbstractTrackedResourceLock] Daemon worker Thread 5: released lock on root.1
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] FAILURE: Build failed with an exception.
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] * What went wrong:
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] Execution failed for task ':runHeapMemoryAfterGC'.
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] > Process 'command '/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64/bin/java'' finished with non-zero exit value 1
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] * Try:
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] Run with --stacktrace option to get the stack trace.  Run with --scan to get full insights.
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] 
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildExceptionReporter] * Get more help at https://help.gradle.org
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildResultLogger] 
+22:23:31.728 [ERROR] [org.gradle.internal.buildevents.BuildResultLogger] BUILD FAILED in 779ms
+22:23:31.728 [LIFECYCLE] [org.gradle.internal.buildevents.TaskExecutionStatisticsReporter] 3 actionable tasks: 2 executed, 1 up-to-date
+22:23:31.729 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Completing Build operation 'Run build'
+22:23:31.729 [DEBUG] [org.gradle.internal.operations.DefaultBuildOperationExecutor] Build operation 'Run build' completed
+22:23:31.731 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for file content cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileContent)
+22:23:31.731 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on file content cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileContent).
+22:23:31.731 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for Build Output Cleanup Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup)
+22:23:31.731 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFiles.bin (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup/outputFiles.bin)
+22:23:31.732 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on Build Output Cleanup Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/buildOutputCleanup).
+22:23:31.732 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for execution history cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory)
+22:23:31.732 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache executionHistory.bin (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory/executionHistory.bin)
+22:23:31.733 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on execution history cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/executionHistory).
+22:23:31.733 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for cache directory md-supplier (/local/home/hohensee/.gradle/caches/5.5/md-supplier)
+22:23:31.733 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cache directory md-supplier (/local/home/hohensee/.gradle/caches/5.5/md-supplier).
+22:23:31.733 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for cache directory md-rule (/local/home/hohensee/.gradle/caches/5.5/md-rule)
+22:23:31.733 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cache directory md-rule (/local/home/hohensee/.gradle/caches/5.5/md-rule).
+22:23:31.734 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 0 resolution results binary files in 0.0 secs
+22:23:31.734 [DEBUG] [org.gradle.deployment.internal.DefaultDeploymentRegistry] Stopping 0 deployment handles
+22:23:31.734 [DEBUG] [org.gradle.deployment.internal.DefaultDeploymentRegistry] Stopped deployment handles
+22:23:31.734 [DEBUG] [org.gradle.cache.internal.LockOnDemandCrossProcessCacheAccess] Releasing file lock for file hash cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes)
+22:23:31.734 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes/fileHashes.bin)
+22:23:31.734 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on file hash cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/fileHashes).
+22:23:31.734 [DEBUG] [org.gradle.cache.internal.DefaultPersistentDirectoryStore] VCS Checkout Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/vcs-1) has last been fully cleaned up 0 hours ago
+22:23:31.734 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache VCS Checkout Cache (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/vcs-1) was closed 0 times.
+22:23:31.734 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache VCS metadata (/local/home/hohensee/workspaces/samples/jmx-demos/.gradle/5.5/vcsMetadata-1) was closed 0 times.
+22:23:31.743 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+22:23:31.775 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClientInputForwarder] Dispatching close input message: org.gradle.launcher.daemon.protocol.CloseInput@53734558
+22:23:31.775 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClientConnection] thread 26: dispatching class org.gradle.launcher.daemon.protocol.CloseInput
+22:23:31.776 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClient] Received result Success[value=org.gradle.launcher.exec.BuildActionResult@2e1ef60] from daemon DaemonInfo{pid=77779, address=[e3eda1a8-ac8d-41ec-841c-c5446057f499 port:45963, addresses:[/0:0:0:0:0:0:0:1, /127.0.0.1]], state=Idle, lastBusy=1646346039894, context=DefaultDaemonContext[uid=15b6ffb0-f881-41f1-ab29-458a90c59a48,javaHome=/local/home/hohensee/jdk/amazon-corretto-11.0.14.10.1-linux-x64,daemonRegistryDir=/local/home/hohensee/.gradle/daemon,pid=77779,idleTimeout=10800000,priority=NORMAL,daemonOpts=--add-opens,java.base/java.util=ALL-UNNAMED,--add-opens,java.base/java.lang=ALL-UNNAMED,--add-opens,java.base/java.lang.invoke=ALL-UNNAMED,--add-opens,java.prefs/java.util.prefs=ALL-UNNAMED,-XX:MaxMetaspaceSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]} (build should be done).
+22:23:31.779 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClientConnection] thread 1: dispatching class org.gradle.launcher.daemon.protocol.Finished
+22:23:31.779 [DEBUG] [org.gradle.launcher.daemon.client.DaemonClientConnection] thread 1: connection stop
