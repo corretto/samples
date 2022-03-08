@@ -1,6 +1,6 @@
-#Heap Occupancy Best Practices
+# Heap Occupancy Best Practices
 
-##What is Heap Occupancy?
+## What is Heap Occupancy?
 
 By "heap" we mean the managed Java object heap, i.e. the area of
 memory where Java objects are allocated and then subject to garbage
@@ -48,7 +48,7 @@ an instantaneously measured value: it changes only after a collection.
 HeapMemoryUse and HeapMemoryAfterGCUse are percentages. They have
 corresponding absolute value metrics HeapMemory and HeapMemoryAfterGC.
 
-##When should we measure Heap Occupancy?
+## When should we measure Heap Occupancy?
 
 An accurate measure of heap occupancy is known only after a full
 traversal of all live objects in the heap. Unfortunately, many modern
@@ -69,7 +69,7 @@ react. So, for "temperamental" applications we obtain the desired data
 frequently and for more "docile" applications we do not need it as
 urgently.
 
-##How can we measure Heap Occupancy?
+## How can we measure Heap Occupancy?
 
 The primary interfaces through which the JVM exports heap occupancy
 data are GC logs and JMX.
@@ -91,7 +91,7 @@ by live data, it may not trigger before trouble starts. What we really
 want to track is live data only, not live data plus to-be-collected
 garbage.
 
-##Generational GC primer
+## Generational GC primer
 
 Generational GCs typically have two generations, old and young. Young
 generation collections are far faster than old generation (or entire
@@ -114,7 +114,7 @@ generation collector and either a full heap collector (Serial and Parallel)
 or an old generation collector (CMS). What is generically referred to
 as an "old generation collector" is really one of the latter.
 
-###CMS
+### CMS
 
 CMS additionally has a rarely invoked third collector, namely the
 Serial GC's full heap collector. If invoked, it means your heap is
@@ -123,7 +123,7 @@ the load placed on it. Tuning requires quite a bit of knowledge about
 how CMS works. JMX does not distinguish between the CMS full heap
 collector and the old generation collector.
 
-###G1
+### G1
 
 In G1, the heap is divided up into fixed size regions. Eden, the
 survivor space, and the old generation are region sets and can vary in
@@ -213,7 +213,7 @@ objects to leak into the old generation Old generation cleanup
 typically occurs long after the load that filled up the old generation
 happened.
 
-###Steady state
+### Steady state
 
 Once an application gets to its steady state, the amount of live data
 in the old generation should be constant, net of long-lived transient
@@ -226,7 +226,7 @@ value once a load spike subsides. The sum of the live data in the old
 generation and the survivor space after the latest collection of each
 is therefore the metric we want to track.
 
-###JMX
+### JMX
 
 JMX exports the necessary values via the
 [MemoryPoolMXBean](https://docs.oracle.com/en/java/javase/17/docs/api//java.management/java/lang/management/MemoryPoolMXBean.html)'s
@@ -252,7 +252,7 @@ percentage heap occupancy value such as HeapMemoryAfterGCUse, we sum
 the used values and divide by the sum of the max values. There are,
 however, some subtleties to this calculation.
 
-###HeapMemoryUse and HeapMemoryAfterGCUse are not comparable
+### HeapMemoryUse and HeapMemoryAfterGCUse are not comparable
 
 HeapMemoryUse is defined as the "used" divided by the "max" of the
 MemoryMXBean's HeapMemoryUsage attribute referenced above, where "max"
@@ -297,7 +297,7 @@ available. G1 is fundamentally different from the other collectors, so
 you must redo your HeapMemoryAfterGCUse alarm levels when moving to G1
 from one of the other collectors.
 
-###What to look for
+### What to look for
 
 If HeapMemoryAfterGCUse is not relatively constant and instead slowly
 increasing, it indicates a memory leak or steadily increasing load on
@@ -340,7 +340,7 @@ the old generation. Before that, all that the JVM knows is the size of
 the long-lived data in the young generation, because young collections
 happen frequently.
 
-###How to use GC logs to determine Heap Occupancy
+### How to use GC logs to determine Heap Occupancy
 
 JVM flags related to garbage collection logging provide insights into
 JVM behavior and status during garbage collections. They surface
@@ -414,7 +414,7 @@ Turning on safepoint logging as in the example above is a good idea. Long pauses
 {{/code}}
 )))
 
-###Using JMX to measure Heap Occupancy
+### Using JMX to measure Heap Occupancy
 
 Each collector has different names for its memory pools, so you must know which collector is in use in order to find the attributes you want to log. Here is a table.
 
@@ -430,7 +430,7 @@ switches is -XX:+UseParallelGC. For Java 9 and later, it is
 -XX:+UseG1GC. You can use -XX:+PrintCommandLineFlags to find out which
 collector you are using.
 
-###Computing HeapMemoryAfterGCUse
+### Computing HeapMemoryAfterGCUse
 
 The expression for HeapMemoryAfterGCUse is "((M1 + M2) * 100) / (M3 +
 M4)", where M1 = OldGenInUseAfterGC, M2 = SurvivorInUse, M3 =
@@ -485,7 +485,7 @@ can we measure Heap Occupancy?". For G1, the HeapMemoryAfterGCUse
 value is "((M1 + M2) * 100) / M3", where M1 = OldGenInUseAfterGC, M2 =
 SurvivorInUse, and M3 = OldGenMaxAfterGC = the value of -Xmx.
 
-###Alarming on Heap Occupancy metrics
+### Alarming on Heap Occupancy metrics
 
 Full collections can be remotely invoked via JMX or from an app via
 System.GC, and force an accurate occupancy reading. It is useful to
