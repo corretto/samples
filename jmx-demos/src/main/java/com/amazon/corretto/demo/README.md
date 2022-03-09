@@ -351,7 +351,7 @@ algorithm choice used in your service, we recommend enabling the
 following flags to continuously log GC behavior and using log file
 rotation.
 
-#### JDK 9+: Unified Logging
+#### JDK 9+
 
 JDK 9 introduced [Unified Logging](https://openjdk.java.net/jeps/158), which simplifies logging configuration. To enable gc logging, use the "gc" tag. Log rotation is managed through "output options." For example:
 
