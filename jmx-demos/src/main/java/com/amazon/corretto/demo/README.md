@@ -351,68 +351,47 @@ algorithm choice used in your service, we recommend enabling the
 following flags to continuously log GC behavior and using log file
 rotation.
 
-(% class="box warningmessage" %)
-(((
-We recommend using the JVM file rotation option instead of the Apollo log rotator because
-of the issue explained here: https://w.amazon.com/bin/view/JVM_Best_Practices/GC_Log_SOPs/#HMyGCLogFilesBecameBinaryFilesAndContainCorruptedData
-)))
+#### JDK 9+: Unified Logging
 
-{{tabs idsToLabels="after-jdk9=JDK9+, before-jdk9=JDK8"/}}
+JDK 9 introduced [Unified Logging](https://openjdk.java.net/jeps/158), which simplifies logging configuration. To enable gc logging, use the "gc" tag. Log rotation is managed through "output options." For example:
 
-(% id="after-jdk9" %)
-(((
-==== Unified Logging ====
-
-JDK9 introduced [["Unified Logging" >>https://openjdk.java.net/jeps/158]], which simplifies logging configuration. To enable gc logging, you use the gc //tag//. Controlling log rotation is managed through //output options.// For example:
-
-{{code}}
-# Setup the gc log location and enable file rotation
+```
+// Setup the gc log location and enable file rotation
 -Xlog:gc=info*:$APOLLO_ENVIRONMENT_ROOT$/var/output/logs/garbage-collection.log::filecount=20,filesize=10M
-{{/code}}
+```
 
 You may use the -Xlog option more than once. You may also configure multiple tags in the same -Xlog option. For example, these are equivalent configurations:
 
-{{code}}
+```
 -Xlog:gc=info*,safepoint*=info:gc.log::filecount=20,filesize=10M
 -Xlog:gc=info*:gc.log::filecount=20,filesize=10M -Xlog:gc=safepoint*:gc.log::filecount=20,filesize=10M
-{{/code}}
+```
 
-Turning on safepoint logging as in the example above is a good idea. Long pauses are //usually//, but not //always// caused by garbage collection.
-)))
+Turning on safepoint logging as in the example above is a good idea. Long pauses are usually, but not always, caused by garbage collection.
 
-(% id="before-jdk9" %)
-(((
-==== Enable GC file rotation ====
-
-{{code}}
-# Setup the gc log location and enable file rotation
--Xloggc:$APOLLO_ENVIRONMENT_ROOT$/var/output/logs/garbage-collection.log
+#### Before JDK 9
+```
+// Setup the gc log location and enable file rotation
+-Xloggc:/var/output/logs/garbage-collection.log
 -XX:+UseGCLogFileRotation
 -XX:GCLogFileSize=10M
 -XX:NumberOfGCLogFiles=20
-{{/code}}
 
-==== Enable GC details, cause and timestamp ====
-
-{{code}}
+// Enable GC details, cause and timestamp
 -XX:+PrintGCDetails
 -XX:+PrintGCCause
 -XX:+PrintGCTimeStamps
 -XX:+PrintGCDateStamps
-{{/code}}
 
-==== Print heap information ====
-
-{{code}}
-# PrintAdaptiveSizePolicy gives info about heap size changes.
-# This is used to understand the ergonomic heuristic decision made by the GC.
-# PrintTenuringDistribution prints the size of objects at each age (or say, tenure).
-# This helps you understand the life cycle of objects during the runtime.
+// Print heap information
+// PrintAdaptiveSizePolicy gives info about heap size changes.
+// This is used to understand the ergonomic heuristic decision made by the GC.
+// PrintTenuringDistribution prints the size of objects at each age (or say, tenure).
+// This helps you understand the life cycle of objects during the runtime.
 -XX:+PrintHeapAtGC
 -XX:+PrintAdaptiveSizePolicy
 -XX:+PrintTenuringDistribution
-{{/code}}
-)))
+```
 
 ### Using JMX to measure Heap Occupancy
 
